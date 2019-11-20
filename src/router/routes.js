@@ -10,31 +10,31 @@ import PeachPostage from '../pages/PeachPostage/PeachPostage.vue';
 
 export default [
   {
-    path:'/peachclassify',
+    path:'/classify',
     component:PeachClassify
   },
   {
-    path:'/peachcollect',
+    path:'/collect',
     component:PeachCollect
   },
   {
-    path:'/peachhome',
+    path:'/home',
     component:PeachHome
   },
   {
-    path:'/peachlogin',
+    path:'/login',
     component:PeachLogin
   },
   {
-    path:'/peachpersonal',
+    path:'/personal',
     component:PeachPersonal
   },
   {
-    path:'/peachpostage',
+    path:'/postage',
     component:PeachPostage
   },
   {
     path:'/',
-    redirect:'/peachhome'
+    redirect:'/home'
   },
 ]
