@@ -1,6 +1,7 @@
 <template>
   <div>
-    PeachHome
+    首页
+    <h1>项目</h1>
   </div>
 </template>
 
