@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="baceContainer">
     <router-view />
     <PeachFooter/>
   </div>
@@ -14,6 +14,7 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
-
+.baceContainer
+  height 100%
  
 </style>
