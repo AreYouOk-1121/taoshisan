@@ -54,7 +54,6 @@
       }
     },
     created() {
-      console.log(footerImage)
       this.footerImages && (this.footerImages = footerImage)
     },
     methods: {

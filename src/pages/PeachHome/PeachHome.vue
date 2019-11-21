@@ -1,6 +1,7 @@
 <template>
   <div>
     PeachHome
+    <button @click="$router.replace('/peachdetails')">去详情</button>
   </div>
 </template>
 
