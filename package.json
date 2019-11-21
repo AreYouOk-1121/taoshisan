@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.3.2",
+    "koa": "^2.11.0",
     "lib-flexible": "^0.3.2",
     "postcss-px2rem": "^0.3.0",
     "stylus": "^0.54.7",
