@@ -1,6 +1,6 @@
 <template>
   <div id="footerGuideContainer">
-    <div class="guideItem" :class="{active:$route.path === '/msite'}" @click="goPath('/peachhome')">
+    <div class="guideItem" :class="{active:$route.path === '/peachhome'}" @click="goPath('/peachhome')">
       <span>
         <img src="https://img.alicdn.com/imgextra/i1/2053469401/O1CN01IDoKYf2JJhy7Pld17_!!2053469401.png" alt="图片">  
       </span>
@@ -8,7 +8,7 @@
         首页
       </span>
     </div>
-    <div class="guideItem" :class="{active:$route.path === '/order'}" @click="goPath('/peachpostage')">
+    <div class="guideItem" :class="{active:$route.path === '/peachpostage'}" @click="goPath('/peachpostage')">
       <span>
         <img src="https://img.alicdn.com/imgextra/i2/2053469401/O1CN01IoDVRW2JJhy7uYnhS_!!2053469401.png" alt="图片">
       </span>
@@ -16,7 +16,7 @@
         9.9包邮
       </span>
     </div>
-    <div class="guideItem" :class="{active:$route.path === '/profile'}" @click="goPath('/peachclassify')">
+    <div class="guideItem" :class="{active:$route.path === '/peachclassify'}" @click="goPath('/peachclassify')">
       <span>
         <img src="https://img.alicdn.com/imgextra/i4/2053469401/O1CN01Ts9O8t2JJhy5zKLZn_!!2053469401.png" alt="图片">
       </span>
@@ -24,7 +24,7 @@
         分类
       </span>
     </div>
-    <div class="guideItem" :class="{active:$route.path === '/profile'}" @click="goPath('/peachcollect')">
+    <div class="guideItem" :class="{active:$route.path === '/peachcollect'}" @click="goPath('/peachcollect')">
       <span>
         <img src="https://img.alicdn.com/imgextra/i3/2053469401/O1CN01090Eiz2JJhy5zJoLf_!!2053469401.png" alt="图片">
       </span>
@@ -32,7 +32,7 @@
         收藏
       </span>
     </div>
-    <div class="guideItem" :class="{active:$route.path === '/search'}" @click="goPath('/peachpersonal')">
+    <div class="guideItem" :class="{active:$route.path === '/peachpersonal'}" @click="goPath('/peachpersonal')">
       <span>
         <img src="https://img.alicdn.com/imgextra/i1/2053469401/O1CN015lCWYO2JJhy8Mlr01_!!2053469401.png" alt="图片">
       </span>
