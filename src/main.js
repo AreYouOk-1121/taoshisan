@@ -4,6 +4,7 @@ import App from './App.vue'
 import 'lib-flexible/flexible';
 import router from './router'
 
+
 Vue.config.productionTip = false
 
 new Vue({

@@ -1,9 +1,7 @@
 <template>
-  <div>
-    PeachCollect
-  </div>
+ 
 </template>
-
+ 
 <script type="text/ecmascript-6">
   // 收藏
   export default {
