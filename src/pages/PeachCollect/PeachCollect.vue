@@ -6,12 +6,15 @@
       <div @click="isShowComelete = !isShowComelete">{{isShowComelete?'完成':'编辑'}}</div>
     </div>
     <div class="CollectCourrent">
-      <ul class="CollectItem">
-        <div class="CollectCenter">
+      <ul class="CollectContent">
+        <li class="CollectItem">
+          
+        </li>
+        <li class="CollectCenter" v-show="false">
           <img src="https://img.alicdn.com/imgextra/i2/2204175008243/O1CN01OTr6Hk2AlLL6RgOtR_!!2204175008243.jpg_310x310.jpg_.webp" alt="无">
           <span>暂无收藏</span>
           <button>去首页逛逛吧</button>
-        </div>
+        </li>
       </ul>
       <div class="CollectCall">
         <div>
@@ -64,11 +67,11 @@
     </div>
     <transition name="delete">
       <div class="deleteCollect"  v-show="isShowComelete">
-      <span>
-        全选0
-      </span>
-      <div>删除</div>
-    </div>
+        <span>
+          全选0
+        </span>
+        <div>删除</div>
+      </div>
     </transition>
     
   </div>
@@ -86,11 +89,8 @@
     methods: {
       goHome(path){
         this.$route.path !== path && this.$router.replace(path)
-      },
-      goCompileOrCompelete(){
-       
       }
-    },  
+    }
   }
 </script>
 
@@ -144,7 +144,7 @@
     .CollectCourrent
       height 1000px
       overflow hidden
-      .CollectItem
+      .CollectContent
         height 334px
         .CollectCenter
           display flex
