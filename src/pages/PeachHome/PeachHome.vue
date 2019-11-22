@@ -5,8 +5,8 @@
       <div class="header_top">
         <input type="text" placeholder="输入商品名或粘贴宝贝标题搜索">
         <div class="header_right">
-          <span>
-            <i class="iconfont icon-xxx"></i>
+          <span class="header_right_icon">
+            <i class="el-icon-chat-dot-round icon-tb"></i>
           </span>
           <span class="news">消息</span>
         </div>
@@ -43,9 +43,9 @@
       <div class="swiper-pagination"></div>
     </div>
     <!-- 图标导航 -->
-    <div class="content">
+    <div class="contents">
       <div class="contentList">
-        <div class="contentItem">
+        <div class="contentItem" @click="details">
           <img src="https://img.alicdn.com/imgextra/i2/2053469401/O1CN011npPe82JJhy3KUj5q_!!2053469401.png" alt="">
           <p>疯抢排行</p>
         </div>
@@ -88,7 +88,7 @@
             <span>470+品牌</span>
           </div>
           <div class="group-right">
-            <p>更多品牌</p>
+            <p @click="goMoreBrand">更多品牌</p>
             <span>></span>
           </div>
         </div>
@@ -132,7 +132,7 @@ import 'swiper/css/swiper.min.css'
     name:"PeachHome",
     mounted(){
      this.$nextTick(() => {
-        this.BScroll = new BScroll(".swiper-container",{
+        this.BScroll = new BScroll(".wrapper",{
           scrollX: true,
         }),
         new Swiper('.swiper-container', {
@@ -140,7 +140,14 @@ import 'swiper/css/swiper.min.css'
             loop: true,
           })
       })
-     
+    },
+    methods:{
+      details(){
+       this.$router.push('/homeShops') 
+      },
+      goMoreBrand(){
+        this.$router.push('/homeMoreBrand')
+      }
     }
 
   }
@@ -173,28 +180,37 @@ import 'swiper/css/swiper.min.css'
           width 36px
           height 35px
           margin 4px 4px 4px 6px
+          display flex
+          flex-direction column
+          .header_right_icon
+            margin-left 2px
+            .icon-tb
+              font-size 20px
           .news
             width 36px
       .wrapper
         width 100%
         height 30px
+        display flex
         overflow: hidden
         .content
           display flex
-          white-space nowrap
           margin-top 9px
+          height 30px
           li
             height 30px
+            width 80px
             line-height 30px
             a
               font-size 14px
               padding 0 8px
               height 30px
               line-height 30px
+              color #fff
     /* 轮播图 */
     .swiper-container
       position absolute
-      top 76px
+      top 85px
       width 355px
       height 140px
       margin 0 10px
@@ -211,7 +227,7 @@ import 'swiper/css/swiper.min.css'
             width 100%
             height 100%
    /* 图标导航 */   
-    .content
+    .contents
       width 355px
       height 94px
       background #fff

@@ -7,6 +7,8 @@ import PeachHome from '../pages/PeachHome/PeachHome.vue';
 import PeachLogin from '../pages/PeachLogin/PeachLogin.vue';
 import PeachPersonal from '../pages/PeachPersonal/PeachPersonal.vue';
 import PeachPostage from '../pages/PeachPostage/PeachPostage.vue';
+import HomeShops from "../pages/homeShops/homeShops.vue";
+import HomeMoreBrand from "../pages/HomeMoreBrand/HomeMoreBrand.vue";
 
 export default [
   {
@@ -32,6 +34,14 @@ export default [
   {
     path:'/peachpostage',
     component:PeachPostage
+  },
+  {
+    path:'/HomeShops',
+    component:HomeShops
+  },
+  {
+    path:'/homeMoreBrand',
+    component:HomeMoreBrand
   },
   {
     path:'/',
