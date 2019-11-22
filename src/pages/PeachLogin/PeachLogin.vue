@@ -1,17 +1,17 @@
 <template>
-  <div>
-    hao
-  </div>
+ <div>
+   登录
+ </div>
 </template>
 
 <script type="text/ecmascript-6">
  //登录
+  import BScroll from 'better-scroll'
   export default {
-    name:""
+    name:"",
   }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
 
- 
 </style>

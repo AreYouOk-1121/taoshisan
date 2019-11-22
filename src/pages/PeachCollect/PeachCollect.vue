@@ -6,9 +6,52 @@
       <div @click="isShowComelete = !isShowComelete">{{isShowComelete?'完成':'编辑'}}</div>
     </div>
     <div class="CollectCourrent">
-      <ul class="CollectContent">
+      <ul class="CollectContent" @click="goDelte">
         <li class="CollectItem">
-          
+          <transition name="ItemTrans">
+            <div class="ItemChild">
+              <div class="ItemLeft">
+                <div class="ItemImage">
+                  <img src="https://img.alicdn.com/imgextra/i3/2794538083/O1CN01zsUX7U29a3whvdszb_!!2794538083.jpg_310x310.jpg_.webp" alt="tu">
+                </div>
+                <div class="Itemcontent">
+                  <span class="ItemName">
+                    【拍3件】烟酰胺焕颜宫廷贵妇膏
+                  </span>
+                  <div class="ItemOther">
+                    <span>劵后价<em>￥38</em></span>
+                    <span>找相似</span>
+                  </div>
+                </div>
+              </div>
+              <div class="ItemDelete">
+                删除
+              </div>
+            </div>
+          </transition>
+        </li>
+        <li class="CollectItem">
+          <transition name="ItemTrans">
+            <div class="ItemChild">
+              <div class="ItemLeft">
+                <div class="ItemImage">
+                  <img src="https://img.alicdn.com/imgextra/i3/2794538083/O1CN01zsUX7U29a3whvdszb_!!2794538083.jpg_310x310.jpg_.webp" alt="tu">
+                </div>
+                <div class="Itemcontent">
+                  <span class="ItemName">
+                    【拍3件】烟酰胺焕颜宫廷贵妇膏
+                  </span>
+                  <div class="ItemOther">
+                    <span>劵后价<em>￥38</em></span>
+                    <span>找相似</span>
+                  </div>
+                </div>
+              </div>
+              <div class="ItemDelete">
+                删除
+              </div>
+            </div>
+          </transition>
         </li>
         <li class="CollectCenter" v-show="false">
           <img src="https://img.alicdn.com/imgextra/i2/2204175008243/O1CN01OTr6Hk2AlLL6RgOtR_!!2204175008243.jpg_310x310.jpg_.webp" alt="无">
@@ -89,6 +132,9 @@
     methods: {
       goHome(path){
         this.$route.path !== path && this.$router.replace(path)
+      },
+      goDelte(event){
+        console.log(event)
       }
     }
   }
@@ -145,7 +191,64 @@
       height 1000px
       overflow hidden
       .CollectContent
-        height 334px
+        .CollectItem
+          padding 10px 0 0 10px
+          background-color #fff
+          height 136px
+          display flex
+          .ItemChild
+            display flex
+            .ItemDelete
+              width 86px
+              height 146px
+              background-color #FC3F78
+              margin-top -10px
+              font-size 20px
+              color #fff
+              text-align center
+              line-height 146px
+            .ItemLeft
+              display flex
+              justify-content space-between
+            .ItemImage
+              img
+                width 126px         
+                height 126px 
+            .Itemcontent      
+              width 220px
+              height 136px
+              margin 0 9px 0 10px
+              padding 0 0 10px 10px
+              box-sizing border-box
+              display flex
+              flex-direction column
+              justify-content space-between
+              align-items center
+              .ItemName
+                font-size 16px
+                font-weight 700
+                line-height 1.2em
+              .ItemOther
+                width 100%
+                display flex
+                justify-content space-between
+                font-size 14px 
+                span:first-child
+                  color #888
+                  line-height 2.2em
+                  em
+                    font-size 16px              
+                span:last-child
+                  background-image linear-gradient(to right, #FBA859 0, #FA4DBD 100%)
+                  width 35%
+                  height 30px
+                  color #fff
+                  font-size 14px
+                  line-height 30px
+                  margin-right 4px
+                  text-align center
+                  border-radius 20px
+
         .CollectCenter
           display flex
           flex-direction column
