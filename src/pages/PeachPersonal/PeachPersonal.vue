@@ -4,7 +4,7 @@
      <div class="top">
     <img src="https://cmsstatic.ffquan.cn//wap_new/user/images/integral/user.png?v=201908292038" alt="">
     <span @click="$router.push('/Peachlogin')">登录/注册</span>
-    <i class="iconfont iconshezhi"></i>
+    <i @click="$router.push('/Rushtobuy')" class="iconfont iconshezhi"></i>
       </div>
    
 

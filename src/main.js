@@ -1,13 +1,20 @@
 import Vue from 'vue'
-
 import App from './App.vue'
 import 'lib-flexible/flexible';
 import router from './router'
 import './veevalidare'
 import * as API from '../api'
-
 import store from './store'
 Vue.prototype.$API = API
+
+
+
+import { Tab, Tabs } from 'vant';
+Vue.use(Tab).use(Tabs);
+
+
+
+
 
 
 
