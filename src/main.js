@@ -6,9 +6,11 @@ import router from './router'
 
 Vue.config.productionTip = false
 
+import { Button } from 'vant'
 import { Tab, Tabs } from 'vant';
-
+import { Row, Col } from 'vant';
 Vue.use(Tab).use(Tabs);
+Vue.use(Row).use(Col)
 
 
 

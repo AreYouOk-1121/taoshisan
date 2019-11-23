@@ -16,6 +16,8 @@ export const baoyou = ()=>ajax({
 })
 
 // 定义9.9包邮请求的方法
-export const getNIne = ()=>({
-  
-})
+
+export const getNIne = ()=>ajax({
+   url:'/peachpostage'  
+
+ })

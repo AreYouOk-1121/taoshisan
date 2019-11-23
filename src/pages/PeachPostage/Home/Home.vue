@@ -1,16 +1,15 @@
 <template>
   <div class="showTainerList">
-    <!-- {{index}} -->
     <!-- 头部 -->
       <div class="header">
         <p> < < 精选推荐 > > </p>
       </div>
       <!-- 列表 -->
       <div class="List">
-        <!-- 每一项 v-for="(items,index) in item" :key="index" -->
-          <div class="ListItem">
+        <!-- 每一项 -->
+          <div class="ListItem" v-for="(item,index) in items" :key="index">
               <a>
-                <img src="https://img.alicdn.com/imgextra/i2/3927942803/O1CN01DxYrAF1WZoilUHION_!!3927942803.jpg_310x310.jpg_.webp" alt="">
+                <img :src="item.pic" alt="">
               </a>
               <div class="SKYCAT">
                   <span class="cat">天猫</span>
@@ -30,35 +29,14 @@
                   </div>
               </div>
           </div>
-          <div class="ListItem">
-              <a>
-                <img src="https://img.alicdn.com/imgextra/i2/3927942803/O1CN01DxYrAF1WZoilUHION_!!3927942803.jpg_310x310.jpg_.webp" alt="">
-              </a>
-              <div class="SKYCAT">
-                  <span class="cat">天猫</span>
-                  <span class="haoping">113万好评！家用2/5卷100只垃圾袋</span>
-              </div>
-              <div class="YHQ">
-                  <div class="QH">
-                    <span class="QH1">券后</span>
-                    <span class="MONEY">￥5.9</span>
-                  </div>
-                  <div class="YUAN">
-                    <span class="QY">券3元</span>
-                  </div>
-                  <div class="YS">
-                    <span class="YSL">已售1251.万  |  </span>
-                    <span class="PJ">评价112.9万</span>
-                  </div>
-              </div>
-          </div> 
+      
           
       </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-import datas from "../../../datas/home.json";
+import datas from "../../../Peach_server/data/tuijian.json";
   export default {
     name:'Home',
     props:{
@@ -68,11 +46,11 @@ import datas from "../../../datas/home.json";
     },
     data() {
       return {
-        item:[]
+        items:[]
       }
     },
     mounted() {
-     this.item = datas.data.data
+     this.items = datas.data.data
     },
   }
 </script>

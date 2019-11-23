@@ -33,6 +33,7 @@ export default [
   },
   {
     path:'/peachpostage',
+<<<<<<< HEAD
     component:PeachPostage,
     children: [
       {
@@ -44,6 +45,9 @@ export default [
         component:Jingxuan
       }
     ]
+=======
+    component:PeachPostage
+>>>>>>> master
   },
 
   {
