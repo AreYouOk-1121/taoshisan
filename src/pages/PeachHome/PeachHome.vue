@@ -14,19 +14,7 @@
       <!-- better-scroll滑动 -->
       <div class="wrapper">
         <ul class="content">
-          <li><a href="javascript:;">精品</a></li>
-          <li><a href="javascript:;">精品</a></li>
-          <li><a href="javascript:;">精品</a></li>
-          <li><a href="javascript:;">精品</a></li>
-          <li><a href="javascript:;">精品</a></li>
-          <li><a href="javascript:;">精品</a></li>
-          <li><a href="javascript:;">精品</a></li>
-          <li><a href="javascript:;">精品</a></li>
-          <li><a href="javascript:;">精品</a></li>
-          <li><a href="javascript:;">精品</a></li>
-          <li><a href="javascript:;">精品</a></li>
-          <li><a href="javascript:;">精品</a></li>
-          <li><a href="javascript:;">精品</a></li>
+          <li v-for="(nav,index) in navs" :key="index"><a href="javascript:;">{{nav}}</a></li>
         </ul>
       </div>
     </header>
@@ -45,7 +33,7 @@
     <!-- 图标导航 -->
     <div class="contents">
       <div class="contentList">
-        <div class="contentItem" @click="details">
+        <div class="contentItem" @click="goDetails">
           <img src="https://img.alicdn.com/imgextra/i2/2053469401/O1CN011npPe82JJhy3KUj5q_!!2053469401.png" alt="">
           <p>疯抢排行</p>
         </div>
@@ -93,28 +81,7 @@
           </div>
         </div>
         <ul class="product-List">
-          <li class="product-Item">
-            <a href=""><img src="https://img.alicdn.com/imgextra/i3/2053469401/O1CN01KExbIH2JJhzFmNEMp_!!2053469401.png" alt=""></a>
-          </li>
-          <li class="product-Item">
-            <a href=""><img src="https://img.alicdn.com/imgextra/i3/2053469401/O1CN01KExbIH2JJhzFmNEMp_!!2053469401.png" alt=""></a>
-          </li>
-          <li class="product-Item">
-            <a href=""><img src="https://img.alicdn.com/imgextra/i3/2053469401/O1CN01KExbIH2JJhzFmNEMp_!!2053469401.png" alt=""></a>
-          </li>
-          <li class="product-Item">
-            <a href=""><img src="https://img.alicdn.com/imgextra/i3/2053469401/O1CN01KExbIH2JJhzFmNEMp_!!2053469401.png" alt=""></a>
-          </li>
-          <li class="product-Item">
-            <a href=""><img src="https://img.alicdn.com/imgextra/i3/2053469401/O1CN01KExbIH2JJhzFmNEMp_!!2053469401.png" alt=""></a>
-          </li>
-          <li class="product-Item">
-            <a href=""><img src="https://img.alicdn.com/imgextra/i3/2053469401/O1CN01KExbIH2JJhzFmNEMp_!!2053469401.png" alt=""></a>
-          </li>
-          <li class="product-Item">
-            <a href=""><img src="https://img.alicdn.com/imgextra/i3/2053469401/O1CN01KExbIH2JJhzFmNEMp_!!2053469401.png" alt=""></a>
-          </li>
-          <li class="product-Item">
+          <li class="product-Item" v-for="(good,index) in 8" :key="index">
             <a href=""><img src="https://img.alicdn.com/imgextra/i3/2053469401/O1CN01KExbIH2JJhzFmNEMp_!!2053469401.png" alt=""></a>
           </li>
         </ul>
@@ -127,6 +94,7 @@
 import BScroll from 'better-scroll'
 import Swiper from "swiper"; 
 import 'swiper/css/swiper.min.css' 
+import { mapState } from "vuex";
   // 首页
   export default {
     name:"PeachHome",
@@ -138,16 +106,28 @@ import 'swiper/css/swiper.min.css'
         new Swiper('.swiper-container', {
             pagination: '.swiper-pagination',
             loop: true,
-          })
-      })
+          })         
+      }),
+      this.$store.dispatch('getGoodsAction')
+      this.$store.dispatch('getNavsAction')
     },
     methods:{
-      details(){
-       this.$router.push('/homeShops') 
+      goDetails(){
+       this.$router.push('/homeshops') 
       },
       goMoreBrand(){
-        this.$router.push('/homeMoreBrand')
+        this.$router.push('/homemorebrand')
       }
+    },
+    computed:{
+      ...mapState({
+        goods(state){
+          return state.goods
+        },
+        navs(state){
+          return state.navs
+        }
+      })
     }
 
   }
@@ -196,11 +176,9 @@ import 'swiper/css/swiper.min.css'
         .content
           display flex
           margin-top 9px
-          height 30px
           li
-            height 30px
+            height 20px
             width 80px
-            line-height 30px
             a
               font-size 14px
               padding 0 8px
@@ -290,7 +268,7 @@ import 'swiper/css/swiper.min.css'
         .title_group
           background #fff
           width 331px
-          height 21px 
+          height 21px
           display flex
           justify-content space-between
           text-align center
@@ -302,7 +280,6 @@ import 'swiper/css/swiper.min.css'
         .product-List
           width 331px
           height 260px
-          background red
           display flex
           justify-content space-around
           flex-wrap wrap

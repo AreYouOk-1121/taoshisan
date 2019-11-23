@@ -36,11 +36,11 @@ export default [
     component:PeachPostage
   },
   {
-    path:'/HomeShops',
+    path:'/homeshops',
     component:HomeShops
   },
   {
-    path:'/homeMoreBrand',
+    path:'/homemorebrand',
     component:HomeMoreBrand
   },
   {
