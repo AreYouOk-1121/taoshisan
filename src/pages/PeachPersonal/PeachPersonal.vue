@@ -3,7 +3,7 @@
    <div class="info">
      <div class="top">
     <img src="https://cmsstatic.ffquan.cn//wap_new/user/images/integral/user.png?v=201908292038" alt="">
-    <span>登录/注册</span>
+    <span @click="$router.push('/Peachlogin')">登录/注册</span>
     <i class="iconfont iconshezhi"></i>
       </div>
    
@@ -69,6 +69,7 @@
       span
         font-size 20px
         position absolute
+        color #ffffff
         top 40px
         left 80px
       .iconfont
@@ -83,6 +84,7 @@
     width 355px
     height 236px
     position absolute
+    
     top 130px
     left 0
     right 0
