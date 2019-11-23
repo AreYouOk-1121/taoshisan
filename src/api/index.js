@@ -9,3 +9,7 @@ export const getGoods = ()=>ajax({
 export const getbrands = ()=>ajax({
   url:'/brands'
 })
+
+export const getpeachCollect = () => ajax({
+  url:'/Peachcollect'
+})

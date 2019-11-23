@@ -9,15 +9,13 @@ const router = new Router()
 // 安装路由器
 router.get('/peachhome',function (req, res) {
   // res.send('111')
-  const data = require('../data/classification.json')
+  // const data = require('./data/classification.json')
   console.log(data)
   res.send({
       code: 0,
       data
-  })
-  
+  }) 
 })
-
 //一级路由
 router.get('/Peachclassify',function (req, res) {
   const data = require('xxx')
@@ -33,7 +31,6 @@ router.get('/Peachpostage',function (res, req) {
     data
   })
 })
-
 router.get('/peachcollect',function (res, req) {
   const data = require('xxx')
   response.send({
@@ -41,7 +38,6 @@ router.get('/peachcollect',function (res, req) {
     data
   })
 })
-
 router.get('/xxx',function (res, req) {
   const data = require('xxx')
   response.send({
@@ -49,7 +45,6 @@ router.get('/xxx',function (res, req) {
     data
   })
 })
-
 router.get('/Peachlogin',function (res, req) {
   const data = require('xxx')
   response.send({
@@ -57,27 +52,31 @@ router.get('/Peachlogin',function (res, req) {
     data
   })
 })
-
+/* 更多详情路由 */
+const brandsData = require('./data/brandsData.json')
+router.get('/brands',function (req, res) {
+  res.send({
+      code: 0,
+      brandsData
+  })
+})
 //二级路由
 router.get('/xxx/xxx',function (res, req) {
   
   response.send('xxx')
 })
-
-
 router.get('/xxx/xxx',function (res, req) {
   
   response.send('xxx')
 })
-
 app.use(router)
-app.listen(3000,function (err) {
+app.listen(5000,function (err) {
   
-  if (!err) {
-    console.log('服务器启动成功了')
-    console.log('服务器启动成功：http://localhost:3000')
-  } else {
-    console.log(err)
-  }
-})
+if (!err) {
+  console.log('服务器启动成功了')
+  console.log('服务器启动成功：http://localhost:5000')
+} else {
+  console.log(err)
+}
 
+})

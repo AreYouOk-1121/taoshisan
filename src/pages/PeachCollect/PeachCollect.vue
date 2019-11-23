@@ -121,7 +121,7 @@
 </template>
 
 <script type="text/ecmascript-6">
-import datas from '../../../data/classification.json'
+import datas from '../../../Peach_server/data/classification.json'
 // import {getpeaCollect} from '../../../api'
 import {mapState} from 'vuex'
   // 分类
