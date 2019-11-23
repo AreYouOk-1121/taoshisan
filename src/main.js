@@ -14,6 +14,8 @@ import 'element-ui/lib/theme-chalk/index.css'
 Vue.use(ElementUI);
 
 Vue.config.productionTip = false
+import { Tab, Tabs } from 'vant';
+Vue.use(Tab).use(Tabs);
 
 const vm = new Vue({
   el: '#app',

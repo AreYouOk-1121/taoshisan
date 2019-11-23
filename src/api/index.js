@@ -13,3 +13,12 @@ export const getbrands = ()=>ajax({
 export const getpeachCollect = () => ajax({
   url:'/Peachcollect'
 })
+/* 定义包邮的方法返回数据 */
+export const baoyou = ()=>ajax({
+  url:'/brands'  //地址看接口文档
+})
+
+// 定义9.9包邮请求的方法
+export const getNIne = ()=>({
+  
+})

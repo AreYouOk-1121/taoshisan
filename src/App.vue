@@ -1,5 +1,5 @@
 <template>
-  <div class="baseContainer">
+  <div class='baseContainer'>
     <router-view />
     <PeachFooter/>
   </div>
