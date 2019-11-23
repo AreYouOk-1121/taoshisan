@@ -9,6 +9,7 @@
   Collect        // 收藏
   Personal       // 个人
   Postage        // 包邮
+  Details        // 详情
 
 
 #### 1. 创建脚手架： vue 3.x
@@ -42,6 +43,8 @@
 
   /src/pages/PeachPostage             // 包邮路由组件
 
+  /src/pages/PeachDetails             // 详情路由组件
+
 #### 3. 安装的包：
 
   stylus stylus-loader       // 样式编译器
@@ -49,6 +52,10 @@
   vue-router                  // 路由
 
   postcss-px2rem lib-flexible  // 移动端适配
+
+
+
+  
 
 
 
