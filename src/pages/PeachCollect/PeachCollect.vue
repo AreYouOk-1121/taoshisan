@@ -121,7 +121,10 @@
 </template>
 
 <script type="text/ecmascript-6">
-  // 收藏
+import datas from '../../../data/classification.json'
+// import {getpeaCollect} from '../../../api'
+import {mapState} from 'vuex'
+  // 分类
   export default {
     name:"PeachCollect",
     data() {
@@ -139,7 +142,6 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
-
   #wn-PeachCollect
     width 100%
     height 1000px

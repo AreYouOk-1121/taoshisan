@@ -1,5 +1,5 @@
 <template>
-  <div  class="baseContainer">
+  <div class="baseContainer">
     <router-view />
     <PeachFooter/>
   </div>
@@ -17,5 +17,4 @@
   .baseContainer
     width 100%
     height 100%
- 
 </style>

@@ -19,35 +19,14 @@ router.get('/peachhome',function (req, res) {
 })
 
 //一级路由
-router.get('/peachdetails',function (req, res) {
-  const data = require('./xiangqing/jingxuan.json')
-  // const data = require('./xiangqing/shangdian.json')
-  // const data = require('./xiangqing/shangjia.json')
-  // const data = require('./xiangqing/tuijia.json')
-  console.log(req.data)
-  switch (key) {
-    case value:
-      
-      break;
-  
-    default:
-      break;
-  }
-  res.send({
-    code: 0,
-    data
-  })
-})
-
-router.get('/peachclassify',function (req, res) {
+router.get('/Peachclassify',function (req, res) {
   const data = require('xxx')
-  res.send({
+  response.send({
     code: 0,
     data
   })
 })
-
-router.get('/peachpostage',function (res, req) {
+router.get('/Peachpostage',function (res, req) {
   const data = require('xxx')
   response.send({
     code: 0,
@@ -63,8 +42,7 @@ router.get('/peachcollect',function (res, req) {
   })
 })
 
-
-router.get('/peachlogin',function (res, req) {
+router.get('/xxx',function (res, req) {
   const data = require('xxx')
   response.send({
     code: 0,
@@ -72,6 +50,13 @@ router.get('/peachlogin',function (res, req) {
   })
 })
 
+router.get('/Peachlogin',function (res, req) {
+  const data = require('xxx')
+  response.send({
+    code: 0,
+    data
+  })
+})
 
 //二级路由
 router.get('/xxx/xxx',function (res, req) {
@@ -85,15 +70,14 @@ router.get('/xxx/xxx',function (res, req) {
   response.send('xxx')
 })
 
-
 app.use(router)
 app.listen(3000,function (err) {
   
-if (!err) {
-  console.log('服务器启动成功了')
-  console.log('服务器启动成功：http://localhost:3000')
-} else {
-  console.log(err)
-}
-
+  if (!err) {
+    console.log('服务器启动成功了')
+    console.log('服务器启动成功：http://localhost:3000')
+  } else {
+    console.log(err)
+  }
 })
+
