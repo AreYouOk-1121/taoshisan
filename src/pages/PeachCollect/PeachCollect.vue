@@ -6,10 +6,10 @@
       <div @click="isShowComelete = !isShowComelete">{{isShowComelete?'完成':'编辑'}}</div>
     </div>
     <div class="CollectCourrent">
-      <ul class="CollectContent" @click="goDelte">
-        <li class="CollectItem">
+      <ul class="CollectContent" >
+        <li class="CollectItem" ref="li">
           <transition name="ItemTrans">
-            <div class="ItemChild">
+            <div class="ItemChild" v-if="isDeleteCollect">
               <div class="ItemLeft">
                 <div class="ItemImage">
                   <img src="https://img.alicdn.com/imgextra/i3/2794538083/O1CN01zsUX7U29a3whvdszb_!!2794538083.jpg_310x310.jpg_.webp" alt="tu">
@@ -126,15 +126,13 @@
     name:"PeachCollect",
     data() {
       return {
-        isShowComelete:false
+        isShowComelete:false,
+        isDeleteCollect:true
       }
     },
     methods: {
       goHome(path){
         this.$route.path !== path && this.$router.replace(path)
-      },
-      goDelte(event){
-        console.log(event)
       }
     }
   }
@@ -148,7 +146,7 @@
     background-color #eee
     .deleteCollect
       &.delete-enter-active,&.delete-leave-active
-        transition all .4s cubic-bezier(1.0, 1.0, 1.0, 1.0)
+        transition all .4s linear 
       &.delete-enter,&.delete-leave-to
         transform: translateY(50px);
         opacity: 0.9;
