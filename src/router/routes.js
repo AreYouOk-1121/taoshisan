@@ -10,29 +10,28 @@ import PeachPostage from '../pages/PeachPostage/PeachPostage.vue';
 import Rushtobuy from '../pages/Rushtobuy/Rushtobuy.vue'
 export default [
   {
-    path:'/Peachclassify',
+    path:'/peachclassify',
     component:PeachClassify
   },
   {
-    path:'/Peachcollect',
+    path:'/peachcollect',
     component:PeachCollect
   },
   {
-    path:'/Peachhome',
+    path:'/peachhome',
     component:PeachHome
   },
   {
-    path:'/Peachlogin',
+    path:'/peachlogin',
     component:PeachLogin
   },
   {
-    path:'/Peachpersonal',
-    component: PeachPersonal,
-    
+    path:'/peachpersonal',
+    component:PeachPersonal
   },
 
   {
-    path:'/Peachpostage',
+    path:'/peachpostage',
     component:PeachPostage
   },
   {
@@ -43,6 +42,6 @@ export default [
   
   {
     path:'/',
-    redirect:'/home'
+    redirect:'/peachhome'
   },
 ]

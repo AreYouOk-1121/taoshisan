@@ -9,7 +9,7 @@ import {
 } from './mutations-type'
 import {
   getpeachCollect
-} from '../../api'
+} from '../api'
 
 
 export default {

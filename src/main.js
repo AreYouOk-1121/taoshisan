@@ -3,7 +3,7 @@ import App from './App.vue'
 import 'lib-flexible/flexible';
 import router from './router'
 import './veevalidare'
-import * as API from '../api'
+import * as API from './api'
 import store from './store'
 Vue.prototype.$API = API
 
