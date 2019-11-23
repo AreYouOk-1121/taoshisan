@@ -7,34 +7,47 @@ import PeachHome from '../pages/PeachHome/PeachHome.vue';
 import PeachLogin from '../pages/PeachLogin/PeachLogin.vue';
 import PeachPersonal from '../pages/PeachPersonal/PeachPersonal.vue';
 import PeachPostage from '../pages/PeachPostage/PeachPostage.vue';
+import Home from "../pages/PeachPostage/Home/Home.vue";
+import Jingxuan from "../pages/PeachPostage/Jingxuan/Jingxuan.vue";
 
 export default [
   {
-    path:'/Peachclassify',
+    path:'/peachclassify',
     component:PeachClassify
   },
   {
-    path:'/Peachcollect',
+    path:'/peachcollect',
     component:PeachCollect
   },
   {
-    path:'/Peachhome',
+    path:'/peachhome',
     component:PeachHome
   },
   {
-    path:'/Peachlogin',
+    path:'/peachlogin',
     component:PeachLogin
   },
   {
-    path:'/Peachpersonal',
+    path:'/peachpersonal',
     component:PeachPersonal
   },
   {
-    path:'/Peachpostage',
-    component:PeachPostage
+    path:'/peachpostage',
+    component:PeachPostage,
+    children: [
+      {
+        path: '/peachpostage/home',
+        component:Home
+      },
+      {
+        path: '/peachpostage/jingxuan',
+        component:Jingxuan
+      }
+    ]
   },
+
   {
     path:'/',
-    redirect:'/Peachhome'
+    redirect:'/peachhome'
   },
 ]
