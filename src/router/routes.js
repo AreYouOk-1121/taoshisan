@@ -62,6 +62,10 @@ export default [
     component:HomeMoreBrand
   },
   {
+    path:'/peachdetails',
+    component:PeachDetails
+  },
+  {
     path:'/',
     redirect:'/peachhome'
   },

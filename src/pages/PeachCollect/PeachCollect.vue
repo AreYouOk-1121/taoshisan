@@ -308,5 +308,114 @@ import {mapState} from 'vuex'
         
 
 
+  #wn-PeachCollect
+    width 100%
+    height 1000px
+    background-color #eee
+    .deleteCollect
+      &.delete-enter-active,&.delete-leave-active
+        transition all .4s cubic-bezier(1.0, 1.0, 1.0, 1.0)
+      &.delete-enter,&.delete-leave-to
+        transform: translateY(50px);
+        opacity: 0.9;
+      width 100%
+      height 50px
+      line-height 50px
+      display flex
+      justify-content space-between
+      position fixed
+      left 0
+      bottom 0
+      z-index 99
+      background-color #ffffff
+      div
+        width 127px
+        height 100%
+        color #ffffff
+        background-color #FC3F78
+        text-align center
+        font-size 16px
+      span
+        font-size 14px
+        margin-left 20px
+    .CollectTitle
+      background-image linear-gradient(to right, #FBA859 0, #FA4DBD 100%)
+      width 100%
+      height 45px
+      background-color #eee
+      display flex
+      justify-content space-between
+      line-height 45px
+      text-align center
+      color white
+      div
+        width 45px
+        font-size 16px
+      span
+        font-size 17px
+    .CollectCourrent
+      height 1000px
+      overflow hidden
+      .CollectItem
+        height 334px
+        .CollectCenter
+          display flex
+          flex-direction column
+          align-items center
+          img
+            margin-top 5px
+            width 188px
+            height 188px
+            border-radius 50%
+          span
+            margin-top 14px
+            font-size 16px
+          button
+            background-image linear-gradient(to right, #FBA859 0, #FA4DBD 100%)
+            width 136px
+            height 35px
+            margin-top 14px
+            border-radius 50px
+            font-size 16px
+            outline none 
+            border none 
+      .CollectCall
+        width 100%
+        height 50px
+        box-sizing border-box
+        padding 14px 0
+        div
+          text-align center
+          img
+            width 20px
+            height 20px
+            vertical-align:middle;
+          span
+            font-size 15px
+      .CollectOmnibus
+        display flex
+        justify-content space-around
+        flex-wrap wrap
+        .CollectOmnibusItem
+          width 180px
+          height 180px
+          background-color #fff
+          display flex
+          flex-direction column
+          height 290px
+          margin-bottom 4px
+          img
+            margin 0 auto
+            width 180px
+            height 180px
+          div
+            font-size 14px
+            margin-left 9px
+            &.tradeName
+              margin 15px 0 30px 9px
+
+        
+
+
  
 </style>
