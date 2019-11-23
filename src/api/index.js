@@ -15,3 +15,7 @@ export const baoyou = ()=>ajax({
   url:'/brands'  //地址看接口文档
 })
 
+// 定义9.9包邮请求的方法
+export const getNIne = ()=>({
+  
+})

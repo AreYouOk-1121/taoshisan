@@ -6,6 +6,15 @@ import router from './router'
 
 Vue.config.productionTip = false
 
+import { Tab, Tabs } from 'vant';
+
+Vue.use(Tab).use(Tabs);
+
+
+
+
+
+
 new Vue({
   el: '#app',
   components: {App},

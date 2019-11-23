@@ -101,8 +101,10 @@ import BScroll from 'better-scroll'
     data() {
       return {
         //item:[]
+       
       }
     },
+    
     
     mounted() {
       this.goRscroll()
