@@ -3,6 +3,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import 'lib-flexible/flexible';
 import router from './router'
+import store from "./store";
 
 /* 按需引入elment Ui组件库 */
 import ElementUI from 'element-ui';
@@ -15,5 +16,6 @@ new Vue({
   el: '#app',
   components: {App},
   template: '<App/>',
-  router
+  router,
+  store
 })

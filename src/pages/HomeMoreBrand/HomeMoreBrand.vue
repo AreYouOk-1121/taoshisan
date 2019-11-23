@@ -8,31 +8,35 @@
       </div>
     </header>
     <!-- 滑动 -->
-    <div class="MoreBrandContent">
-      <div class="wrapper">
-        <ul class="content">
-          <li><a href="javascript:;">精品</a></li>
-          <li><a href="javascript:;">精品</a></li>
-          <li><a href="javascript:;">精品</a></li>
-          <li><a href="javascript:;">精品</a></li>
-          <li><a href="javascript:;">精品</a></li>
-          <li><a href="javascript:;">精品</a></li>
-          <li><a href="javascript:;">精品</a></li>
-          <li><a href="javascript:;">精品</a></li>
-        </ul>
-      </div>
+    <div class="wrapper">
+      <ul class="content">
+        <li><a href="javascript:;">精品</a></li>
+        <li><a href="javascript:;">精品</a></li>
+        <li><a href="javascript:;">精品</a></li>
+        <li><a href="javascript:;">精品</a></li>
+        <li><a href="javascript:;">精品</a></li>
+        <li><a href="javascript:;">精品</a></li>
+        <li><a href="javascript:;">精品</a></li>
+        <li><a href="javascript:;">精品</a></li>
+        <li><a href="javascript:;">精品</a></li>
+        <li><a href="javascript:;">精品</a></li>
+        <li><a href="javascript:;">精品</a></li>
+        <li><a href="javascript:;">精品</a></li>
+        <li><a href="javascript:;">精品</a></li>
+        <li><a href="javascript:;">精品</a></li>
+      </ul>
     </div>
     <div class="tuijian">
       <p class="tuijian-today">今日推荐</p>
       <p>严选口碑好货，触底品牌低价</p>
     </div>
     <!-- 商家item -->
-    <div class="shopItem">  
+    <div class="shopItem" v-for="(brand,index) in brands" :key="index" >  
       <!-- 上部 -->
       <div class="shop-top">
-        <img class="logo" src="https://img.alicdn.com/bao/uploaded///img.taobaocdn.com/tps/TB1FxgBmKOSBuNjy0FdXXbDnVXa" alt="">
+        <img class="logo" :src="brand.logo" alt="">
         <div class="shop-caopai">
-          <p>马克华菲</p>
+          <p>{{brand.title}}</p>
           <a href=""><i>中国潮流品牌</i></a>
         </div>
       </div>
@@ -43,25 +47,25 @@
           <p class="msg">
             <i style="font-style:normal;">实付满19元包邮   点击查看&gt;&gt;</i>
           </p>
-          <span class="out">已售42.5万件&gt;</span>
+          <span class="out">已售{{brand.Sold}}万件&gt;</span>
         </div>
-        <div class="focus">2734w人关注</div>
+        <div class="focus">{{brand.attention}}w人关注</div>
       </div>
       <!-- 下部 -->
       <div class="shops">
         <ul class="shopList">
-          <li class="shopItemDetails">
+          <li class="shopItemDetails" v-for="(brand,index) in brands" :key="index">
             <div class="DetailsItem">
               <div class="ItemImg">
-                <img src="https://img.alicdn.com/imgextra/i3/619123122/O1CN0190dXu81Yvv5IZ5Z7y_!!619123122.jpg_310x310.jpg_.webp" alt="" class="shopImg">
-                <div class="shopDiscount">9.7折</div>
+                <img :src="brand.image" alt="" class="shopImg">
+                <div class="shopDiscount">{{brand.discount}}折</div>
               </div>
               <!-- 价格上部 -->
               <div class="shopPrice">
                 <div class="shopPriceTop">
                   <div class="priceTag">¥</div>
-                  <span class="priceNew">34.9</span>
-                  <del class="pricePre">¥35.9</del>
+                  <span class="priceNew">{{brand.NewPrice}}</span>
+                  <del class="pricePre">¥{{brand.prePrice}}</del>
                 </div>
               </div>
               <!-- 价格中部 -->
@@ -71,57 +75,7 @@
                 <div class="merchatTag">爆款</div>
               </div>
               <!-- 价格中下部 -->
-              <div class="sold">已售41.5w件</div>
-              <div class="Second">第二件1元</div>
-            </div>
-          </li>
-          <li class="shopItemDetails">
-            <div class="DetailsItem">
-              <div class="ItemImg">
-                <img src="https://img.alicdn.com/imgextra/i3/619123122/O1CN0190dXu81Yvv5IZ5Z7y_!!619123122.jpg_310x310.jpg_.webp" alt="" class="shopImg">
-                <div class="shopDiscount">9.7折</div>
-              </div>
-              <!-- 价格上部 -->
-              <div class="shopPrice">
-                <div class="shopPriceTop">
-                  <div class="priceTag">¥</div>
-                  <span class="priceNew">34.9</span>
-                  <del class="pricePre">¥35.9</del>
-                </div>
-              </div>
-              <!-- 价格中部 -->
-              <div class="tag">
-                <img class="jiaobiao"  src="//cmsstatic.ffquan.cn//wap_new/brand/images/ju.png" alt="">
-                <div class="merchatTag">旗舰店</div>
-                <div class="merchatTag">爆款</div>
-              </div>
-              <!-- 价格中下部 -->
-              <div class="sold">已售41.5w件</div>
-              <div class="Second">第二件1元</div>
-            </div>
-          </li>
-          <li class="shopItemDetails">
-            <div class="DetailsItem">
-              <div class="ItemImg">
-                <img src="https://img.alicdn.com/imgextra/i3/619123122/O1CN0190dXu81Yvv5IZ5Z7y_!!619123122.jpg_310x310.jpg_.webp" alt="" class="shopImg">
-                <div class="shopDiscount">9.7折</div>
-              </div>
-              <!-- 价格上部 -->
-              <div class="shopPrice">
-                <div class="shopPriceTop">
-                  <div class="priceTag">¥</div>
-                  <span class="priceNew">34.9</span>
-                  <del class="pricePre">¥35.9</del>
-                </div>
-              </div>
-              <!-- 价格中部 -->
-              <div class="tag">
-                <img class="jiaobiao"  src="//cmsstatic.ffquan.cn//wap_new/brand/images/ju.png" alt="">
-                <div class="merchatTag">旗舰店</div>
-                <div class="merchatTag">爆款</div>
-              </div>
-              <!-- 价格中下部 -->
-              <div class="sold">已售41.5w件</div>
+              <div class="sold">已售{{brand.Sold}}w件</div>
               <div class="Second">第二件1元</div>
             </div>
           </li>
@@ -132,13 +86,50 @@
 </template>
 
 <script type="text/ecmascript-6">
+import BScroll from "better-scroll";
+import { getbrands } from "../../api";
+import { mapState } from "vuex";
 /* 更多品牌 */
   export default {
     name:"HomeMoreBrand",
+    /* data(){
+      return {
+        brandsData:[]//初始化更多品牌数据
+      }
+    }, */
+
     methods:{
       goPeachHome(){
         this.$router.back('/goPeachHome')
       }
+      
+    },
+   mounted(){
+      this.$nextTick(()=>{
+        this.BScroll = new BScroll('.wrapper',{
+          scrollX:true
+        })
+      })
+      /* 发送请求,得到更多品牌数据 */
+     /*  let result = await getbrands()
+      if(result.code === 0){
+        this.brandsData = result.brandsData
+      }  
+      console.log(this.brandsData);   */
+      console.log(this.$store.dispatch);
+      
+      this.$store.dispatch('getBrandsAction')
+    },
+    computed:{
+      //根据已有数据截取前三个为一个数组,在页面进行渲染
+      brands(){
+        return this.brandsData.splice(0,3)
+      },
+      ...mapState({
+        brandsData(state){
+          return state.brands
+        }
+      })
     }
   }
 </script>
@@ -162,20 +153,21 @@
       font-size 18px
       color #fff
   /* 滑动 */
-  .MoreBrandContent
-    width 100%
-    height 45px 
     .wrapper
+        padding-top 15px
         width 100%
         height 30px
         overflow: hidden
+        display flex
         .content 
           display flex
-          white-space nowrap
           margin-top 9px
+          height 30px
           li
             height 30px
             line-height 30px
+            width 50px
+            margin-left 12px
             a
               font-size 14px
               padding 0 8px

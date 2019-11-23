@@ -37,7 +37,7 @@
     <div class="activity">
       <p>距离下次排名更新还有06分18秒</p>
     </div>
-    <div class="content">
+    <div class="contentArea">
       <div class="contentItem">
         <div class="itemLeft"><img class="lazy" src="https://img.alicdn.com/imgextra/i1/3034588402/O1CN01H5Nec32BwAI4do3lF_!!3034588402.jpg_310x310.jpg" alt="">
         </div>
@@ -90,6 +90,7 @@
 <script type="text/ecmascript-6">
 import BScroll from 'better-scroll'
 import 'swiper/css/swiper.min.css'
+import {brands } from "../../api";
 
 export default {
   name:'homeShops',
@@ -98,7 +99,8 @@ export default {
       this.$router.back('/goPeachHome')
     }
   },
-   mounted(){
+
+  mounted(){
     this.$nextTick(() => {
       this.BScroll = new BScroll(".wrapper",{
         scrollX: true,
@@ -115,7 +117,7 @@ export default {
   .header
     width 100%
     height 90px
-    background pink
+    background linear-gradient(to left,#FA4DBE 0,#FBAA58 100%);
     .header-top
       height 45px
       width 100%
@@ -139,22 +141,24 @@ export default {
     /* 滑动 */
     .wrapper
       width 100%
-      height 33px
+      height 30px
       overflow hidden
+      display flex
       .content
         display flex
-        white-space nowrap
         margin-top 9px
+        height 30px
         li
-          width 30px
+          width 50px
           height 30px
           line-height 30px
-          padding 0 8px
+          margin-left 10px
           a
+            padding 0 8px
             font-size 14px
-            
             height 30px
             line-height 30px
+            color #fff
   /* 活动内容 */
   .activity
     width 100%
@@ -163,7 +167,7 @@ export default {
     text-align center
     line-height 35px
   /* item每一项 */
-  .content
+  .contentArea
     width 100%
     background f5f5f5
     .contentItem

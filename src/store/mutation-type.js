@@ -1,0 +1,1 @@
+export const SAVE_BRANDS = 'save_brands'  //更多商品数据
