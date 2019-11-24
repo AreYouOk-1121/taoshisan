@@ -15,6 +15,8 @@
       <ShangJia :shangName = "shangJia? shangJia : {}"/>
       <!-- 相似推荐 -->
       <TuiJian :shangTuijian="tuiJia"/>
+      <!-- 精选 -->
+      <JingXuan />
     </div>
     <div class="DeatailCollect">
       <div class="shareCollect">
@@ -54,7 +56,7 @@
   import ShangPin from '../../components/ShangPin/ShangPin'
   import ShangJia from '../../components/shangJia/ShangJia'
   import TuiJian from '../../components/TuiJian/TuiJian'
-
+  import JingXuan from '../../components/JingXuan/JingXuan'
   import {mapState} from 'vuex'
   export default {
     name:"PeachDetails",
@@ -62,7 +64,8 @@
       BigImage,
       ShangPin,
       ShangJia,
-      TuiJian
+      TuiJian,
+      JingXuan
     },
     computed: {
       ...mapState({
