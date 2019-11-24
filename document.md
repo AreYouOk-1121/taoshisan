@@ -9,6 +9,7 @@
   Collect        // 收藏
   Personal       // 个人
   Postage        // 包邮
+  Details        // 详情
 
 
 #### 1. 创建脚手架： vue 3.x
@@ -41,6 +42,8 @@
   /src/pages/PeachPersonal             // 我的路由组件
 
   /src/pages/PeachPostage             // 包邮路由组件
+
+  /src/pages/PeachDetails             // 详情路由组件
 
 #### 3. 安装的包：
 

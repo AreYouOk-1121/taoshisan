@@ -5,7 +5,7 @@
       <div class="header_top">
         <input type="text" placeholder="输入商品名或粘贴宝贝标题搜索">
         <div class="header_right">
-          <span class="header_right_icon">
+          <span class="header_right_icon" @click="goLogin">
             <i class="el-icon-chat-dot-round icon-tb"></i>
           </span>
           <span class="news">消息</span>
@@ -68,7 +68,7 @@
       </div>
     </div>
     <!-- 品牌特卖 -->
-    <div class="main_products">
+    <div class="main_products" v-for="(good,index) in 2" :key="index">
       <div class="main_product_content">
         <div class="title_group">
           <div class="group-left">
@@ -117,6 +117,9 @@ import { mapState } from "vuex";
       },
       goMoreBrand(){
         this.$router.push('/homemorebrand')
+      },
+      goLogin(){//跳到登录页
+        this.$router.push('/peachlogin')
       }
     },
     computed:{
@@ -258,7 +261,7 @@ import { mapState } from "vuex";
     .main_products
       width 355px
       height 315px
-      margin 0 auto
+      margin 4px auto
       padding 12px 12px 0 12px
       box-sizing border-box
       background #fff

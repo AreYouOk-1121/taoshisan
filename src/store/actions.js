@@ -1,4 +1,4 @@
-import {SAVE_BRANDS,SAVE_GOODS,SAVE_GETNAVS} from "./mutation-type";
+import {SAVE_BRANDS,SAVE_GOODS,SAVE_GETNAVS} from "./mutations-type";
 
 import { getbrands,getGoods,getnavs} from "../api";
 export default {

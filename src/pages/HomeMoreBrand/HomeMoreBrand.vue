@@ -91,7 +91,7 @@ import { getbrands } from "../../api";
 import { mapState } from "vuex";
 /* 更多品牌 */
   export default {
-    name:"homemorebrand",
+    name:"HomeMoreBrand",
     /* data(){
       return {
         brandsData:[]//初始化更多品牌数据
@@ -284,7 +284,6 @@ import { mapState } from "vuex";
               .shopImg
                 width 106px
                 height 106px
-                background pink
               .shopDiscount
                 background linear-gradient(153deg,#fad961 0,#f76b1c 100%)
                 border-radius 7px 7px 7px 0

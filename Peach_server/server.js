@@ -10,6 +10,7 @@ const router = new Router()
 router.get('/peachhome',function (req, res) {
   // res.send('111')
   const data = require('../data/classification.json')
+  // const data = require('./data/classification.json')
   console.log(data)
   res.send({
       code: 0,
@@ -19,8 +20,9 @@ router.get('/peachhome',function (req, res) {
 })
 
 /* 更多详情路由 */
-const brandsData = require('../Peach_server/data/brandsData.json')
+
 router.get('/brands',function (req, res) {
+  const brandsData = require('./data/brandsData.json')
   res.send({
       code: 0,
       brandsData
@@ -29,7 +31,7 @@ router.get('/brands',function (req, res) {
 })
 
 /* 商家详情 */
-const goodsData = require('../Peach_server/data/goodsData.json')
+const goodsData = require('./data/goodsData.json')
 router.get('/goods',function (req, res) {
   res.send({
       code: 0,
@@ -39,7 +41,7 @@ router.get('/goods',function (req, res) {
 })
 
 /* 获取导航详情 */
-const navigationData = require('../Peach_server/data/NavData.json')
+const navigationData = require('./data/NavData.json')
 router.get('/navs',function (req, res) {
   res.send({
       code: 0,
@@ -49,44 +51,53 @@ router.get('/navs',function (req, res) {
 })
 
 
+
+
+
 //一级路由
-router.get('/xxx',function (req, res) {
-  
-  res.send('xxx')
+router.get('/Peachclassify',function (req, res) {
+  const data = require('xxx')
+  response.send({
+    code: 0,
+    data
+  })
 })
-
-
-
+router.get('/Peachpostage',function (res, req) {
+  const data = require('xxx')
+  response.send({
+    code: 0,
+    data
+  })
+})
+router.get('/peachcollect',function (res, req) {
+  const data = require('xxx')
+  response.send({
+    code: 0,
+    data
+  })
+})
 router.get('/xxx',function (res, req) {
-  
-  response.send('xxx')
+  const data = require('xxx')
+  response.send({
+    code: 0,
+    data
+  })
 })
-
-
-
-router.get('/xxx',function (res, req) {
-  
-  response.send('xxx')
+router.get('/Peachlogin',function (res, req) {
+  const data = require('xxx')
+  response.send({
+    code: 0,
+    data
+  })
 })
-
-
-
-
-
-router.get('/xxx',function (res, req) {
-  
-  response.send('xxx')
+/* 更多详情路由 */
+const brandsData = require('./data/brandsData.json')
+router.get('/brands',function (req, res) {
+  res.send({
+      code: 0,
+      brandsData
+  })
 })
-
-
-
-
-
-
-
-
-
-
 //二级路由
 router.get('/xxx/xxx',function (res, req) {
   
@@ -115,3 +126,4 @@ if (!err) {
 }
 
 })
+

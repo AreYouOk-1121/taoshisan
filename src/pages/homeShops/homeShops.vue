@@ -40,7 +40,7 @@
     <div class="contentArea">
       <div class="contentItem" v-for="(good,index) in goods" :key="index">
         <div class="itemLeft">
-          <img class="lazy" :src="good.image" alt="">
+          <img class="lazy" v-lazy="good.image" alt="">
         </div>
         <div class="itemRight">
           <h3>{{good.summary}}</h3>
@@ -50,7 +50,7 @@
           </a>
           <div class="price">
             <div class="new-price">劵后价¥{{good.newPrice}}</div>
-            <a href="javascript:;">立即抢购</a>
+            <a href="javascript:;" @click="goPeachDetails(index)">立即抢购</a>
           </div>
         </div>
       </div>
@@ -69,6 +69,9 @@ export default {
   methods:{
     goPeachHome(){
       this.$router.back()  
+    },
+    goPeachDetails(index){ //跳转详情页  
+      this.$router.push('/peachdetails')
     }
   },
 
@@ -77,7 +80,8 @@ export default {
       this.BScroll = new BScroll(".wrapper",{
         scrollX: true,
       })
-    })
+    }),
+     this.$store.dispatch('getGoodsAction')
   },
   computed:{
     ...mapState(['goods'])

@@ -1,20 +1,15 @@
 /* axios进行二次封装 */
 import axios from "axios";
 import qs from "qs";
-
 //设置基础路径
 axios.defaults.baseURL = "/api"
-
 //请求拦截器
 axios.interceptors.request.use((config)=>{
-  
   if(config.method.toUpperCase()==="POST" && config.data instanceof Object){
     config.data = qs.stringify(config.data)
   }
   return config
 })
-
-
 //响应拦截器拦截器
 axios.interceptors.response.use(
   /* 成功 */
