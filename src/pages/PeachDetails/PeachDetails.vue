@@ -1,63 +1,69 @@
 <template>
   <div id="wn-PeachDeatail">
-    <div class="DeatailTitle" v-show="false">
+    <div class="DeatailTitle" v-show="true">
       <div><</div>
       <span>商品</span>
       <span>推荐</span>
       <div>. . .</div>
     </div>
-    <div class="DeatailContent">
-      <!-- 大图组件 -->
-      <BigImage :bigImage="shangDian[0]? shangDian[0].pic :''"/>
-      <!-- 商品信息 -->
-      <ShangPin :shangMessage="shangDian[0]? shangDian[0]:{}"/>
-      <!-- 商家 -->
-      <ShangJia :shangName = "shangJia? shangJia : {}"/>
-      <!-- 相似推荐 -->
-      <TuiJian :shangTuijian="tuiJia"/>
-      <!-- 精选 -->
-      <JingXuan />
-    </div>
-    <div class="DeatailCollect">
-      <div class="shareCollect">
-        <span>
-          分享
-        </span>
-        <span>
-          收藏
-        </span>
+      <div class="DeatailContent" ref="deatail">
+        <div>
+          <!-- 大图组件 -->
+          <BigImage :bigImage="shangDian[0]? shangDian[0].pic :''"/>
+          <!-- 商品信息 -->
+          <ShangPin :shangMessage="shangDian[0]? shangDian[0]:{}"/>
+          <!-- 商家 -->
+          <ShangJia :shangName = "shangJia? shangJia : {}"/>
+          <!-- 相似推荐 -->
+          <TuiJian :shangTuijian="tuiJia? tuiJia : []"/>
+          <!-- 精选 -->
+          <JingXuan :jingXuanBiao="tuiJia? tuiJia : []"/>
+            
+        </div>
+        
       </div>
-      <div class="noNeckPower" v-show="false">
-        <p>
-          ￥<em>37.9</em>
-        </p>
-        <p>
-          不领劵
-        </p>
+      <div class="DeatailCollect">
+        <div class="shareCollect">
+          <span>
+            分享
+          </span>
+          <span>
+            收藏
+          </span>
+        </div>
+        <div class="noNeckPower" v-show="false">
+          <p>
+            ￥<em>37.9</em>
+          </p>
+          <p>
+            不领劵
+          </p>
+        </div>
+        <div class="loseEfficacy">
+          活动已结束
+        </div>
+        <div class="neckPower" v-show="false">
+          <span>
+            ￥<em>12.9</em>
+          </span>
+          <span>
+            领劵购买
+          </span>
+        </div>
       </div>
-      <div class="loseEfficacy">
-        活动已结束
-      </div>
-      <div class="neckPower" v-show="false">
-        <span>
-          ￥<em>12.9</em>
-        </span>
-        <span>
-          领劵购买
-        </span>
-      </div>
-    </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
+  import {mapState} from 'vuex'
+  import BScroll from 'better-scroll'
 
   import BigImage from '../../components/BigImage/BigImage'
   import ShangPin from '../../components/ShangPin/ShangPin'
   import ShangJia from '../../components/shangJia/ShangJia'
   import TuiJian from '../../components/TuiJian/TuiJian'
   import JingXuan from '../../components/JingXuan/JingXuan'
-  import {mapState} from 'vuex'
+
   export default {
     name:"PeachDetails",
     components:{
@@ -78,6 +84,32 @@
       this.$store.dispatch('getShangDian')
       this.$store.dispatch('getShangJia')
       this.$store.dispatch('getTuiJia')
+
+      this.shangDian && this._deatailDian()
+    },
+    methods: {
+      _deatailDian(){
+        this.deatailScroll = new BScroll(this.$refs.deatail,{
+          scrollY:true,
+          probeType:2,
+          click:true
+          // tap:"goBy"
+        })
+
+        this.deatailScroll.on('scroll',({x,y})=>{
+          // console.log(y)
+        })
+      },
+      goBy(index){
+        console.log(index)
+      }
+    },
+    watch: {
+      shangDian(){
+        this.$nextTick(()=>{
+          this._deatailDian()
+        })
+      }
     },
   }
 </script>
@@ -87,7 +119,9 @@
   background-color #eee
   .DeatailContent
     width 100%
-    height 2000px
+    height calc(100vh - 56px)
+    .tuijian
+      width 100%
 
   .DeatailTitle
     background-image linear-gradient(to right, #FBA859 0, #FA4DBD 100%)
@@ -100,6 +134,7 @@
     text-align center
     color white
     position fixed
+    z-index 99
     top 0
     left 0
     div
