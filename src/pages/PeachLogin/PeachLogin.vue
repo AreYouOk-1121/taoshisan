@@ -17,7 +17,12 @@
               <input v-model="phone" name="phone" v-validate="'required|phone'" type="tel" maxlength="11" placeholder="手机号">
               
               <span style="color: red;" v-show="errors.has('phone')">{{errors.first('phone')}}</span>
-              <button @click.prevent="sendCode" class="get_verification"> </button>
+              
+              
+              <button @click.prevent="sendCode":disabled ="!isRightPhoneNumber || !!countDown" 
+               class="get_verification"
+               :class="isRightPhoneNumber?'right_phone_number':''"
+               >{{countDown?`${countDown}s后可以在获取`:'获取验证码'}}</button>
           </section>
 
           <section class="login_verification">
@@ -49,9 +54,6 @@
                 <input v-model="captcha" name="captcha" v-validate="'required'" type="text" maxlength="11" placeholder="验证码">
                 <span style="color: red;" v-show="errors.has('captcha')">{{errors.first('captcha')}}</span>
                 <img ref="captcha" class="get_verification" @click="updata" src="http://localhost:3000/captcha" alt="captcha"/>
-            
-
-                
               </section>
             </section>
           </div>
@@ -67,6 +69,8 @@
 
 <script type="text/ecmascript-6">
  //登录
+import BScroll from 'better-scroll'
+import { async } from 'q';
   export default {
     data() {
       return {
@@ -86,6 +90,75 @@
       updata(){
 
         this.$refs.captcha.src="http://localhost:3000/captcha?time=" + Date.now();
+      },
+      async login(){
+        let {isPassWordLogin,name,pwd,captcha,phone,code} = this;
+        let names = isPassWordLogin ? ["username", "pwd", "captcha"]: ["phone", "code"];
+
+        const success = await this.$validator.validateAll(name)
+        console.log(success)
+        if (success) {
+          alert('表单验证成功')
+          let result
+          if (isPassWordLogin) {
+            result = await this.$API.getpeachPassword(name,pwd,captcha);
+             if (result.code === 1) {
+             
+              //  this.captcha = "";
+              console.log(result)
+               this.updata();
+             }
+          }else{
+           result = await this.$API.loginWithPhone(phone,code)
+            if (result.code === 1) {
+              this.code = "";
+            }
+          }
+          
+          if (result.code === 0) {
+            console.log(result)
+            alert('登录成功')
+            this.$store.dispatch('getUserAction',{user:result.data})
+            this.$router.replace('/peachhome')
+              
+
+          }else{
+            alert('验证失败')
+          }
+
+
+        }
+
+      
+
+
+
+      },
+      async sendCode(){
+        console.log('发送验证码')
+        // let result = await this.$API.send
+           let result
+         result = await this.$API.sendCode(this.phone)
+         if (result === 0) {
+           alert('发送成功')
+           
+         }else{
+           alert('发送失败',this.countDown,'后重新发送')
+         }
+
+
+         this.countDown = 10;
+      let intervalId = setInterval(() => {
+        this.countDown --;
+        this.countDown === 0 && clearInterval(this.intervalId)
+
+}, 1000);
+      }
+    },
+
+    computed: {
+      isRightPhoneNumber(){
+         return /^1(3|4|5|6|7|8|9)\d{9}$/.test(this.phone);
       }
 
     },

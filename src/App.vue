@@ -1,7 +1,7 @@
 <template>
-  <div class="baseContainer">
+  <div class='baseContainer'>
     <router-view />
-    <PeachFooter/>
+    <PeachFooter v-if="$route.meta.isShowFooterGuide"/>
   </div>
 </template>
 
@@ -14,8 +14,7 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
-.baseContainer
-  width 100%
-  height 100%
- 
+  .baseContainer
+    width 100%
+    height 100%
 </style>

@@ -3,7 +3,7 @@
    <div class="info">
      <div class="top">
     <img src="https://cmsstatic.ffquan.cn//wap_new/user/images/integral/user.png?v=201908292038" alt="">
-    <span @click="$router.push('/Peachlogin')">登录/注册</span>
+    <span @click="$router.push('/Peachlogin')" v-if="!user.phone">{{user.name ? user.name : '请登录'}}</span>
     <i @click="$router.push('/Rushtobuy')" class="iconfont iconshezhi"></i>
       </div>
    
@@ -42,10 +42,24 @@
 </template>
 
 <script type="text/ecmascript-6">
-
+import {mapState} from 'vuex'
 // 我的
   export default {
-   
+   data() {
+     return {
+       
+     }
+   },
+
+
+
+
+
+   computed: {
+     ...mapState({
+       user: state => state.user
+     })
+   },
   }
 </script>
 

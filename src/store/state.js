@@ -1,10 +1,9 @@
-export default {
-  initData:'用于测试',
-  // classify,//分类数据
-  collect:[],//收藏数据
-  // home,//首页数据
-  // login,//登录数据
-  // personal,
-  // postage,//包邮数据
 
+export default {
+  collect:[],//收藏数据
+  brands: [],//初始化更多商品
+  classify: [],
+  user: [],//用户数据
+  token:[]
+  
 }
