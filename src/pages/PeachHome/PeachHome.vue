@@ -8,7 +8,7 @@
           <span class="header_right_icon" @click="goLogin">
             <i class="el-icon-chat-dot-round icon-tb"></i>
           </span>
-          <span class="news">消息</span>
+          <span class="news" @click="$router.replace('/peachdetails')">消息</span>
         </div>
       </div>
       <!-- better-scroll滑动 -->

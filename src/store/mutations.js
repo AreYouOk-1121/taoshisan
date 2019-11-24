@@ -1,4 +1,20 @@
-import { SAVE_BRANDS,SAVE_GOODS,SAVE_GESHOPCOLLECTS, SAVE_GETNAVS} from "./mutations-type";
+
+import {
+  SAVE_ADDRESS,
+  SAVE_CLASSIFY,
+  SAVE_COLLECT,
+  SAVE_HOME,
+  SAVE_LOGIN,
+  SAVE_PERSONAL,
+  SAVE_POSTAGE,
+  SAVE_BRANDS,
+  SAVE_SHANGDIAN,
+  SAVE_SHANGJIA,
+  SAVE_SHANGTUIJIAN,
+  SAVE_GOODS,
+  SAVE_GESHOPCOLLECTS, 
+  SAVE_GETNAVS
+} from './mutations-type'
 
 export default {
   [SAVE_BRANDS](state,{brands}){
@@ -14,6 +30,23 @@ export default {
   //同步修改ShopCollects收藏夹状态
   [SAVE_GESHOPCOLLECTS](state,{ShopCollects}){
     state.ShopCollects = ShopCollects
-  }
+  },
+  [SAVE_COLLECT](state,{
+    collect
+  }) {
+    state.collect = collect
+  },
+  [SAVE_BRANDS](state,{brands}){
+    state.brands = brands
+  },
+  [SAVE_SHANGDIAN](state,{shangDian}){
+    state.shangDian = shangDian
+  },
+  [SAVE_SHANGJIA](state,{shangJia}){
+    state.shangJia = shangJia
+  },
+  [SAVE_SHANGTUIJIAN](state,{tuiJia}){
+    state.tuiJia = tuiJia
+  },
 
 }

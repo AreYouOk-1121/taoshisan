@@ -55,37 +55,56 @@ router.get('/navs',function (req, res) {
 
 
 //一级路由
-router.get('/Peachclassify',function (req, res) {
-  const data = require('xxx')
-  response.send({
+router.get('/peachclassify',function (req, res) {
+  // const data = require('xxx')
+  res.send({
     code: 0,
     data
   })
 })
-router.get('/Peachpostage',function (res, req) {
-  const data = require('xxx')
-  response.send({
+router.get('/peachpostage',function (req,res) {
+  // const data = require('xxx')
+  res.send({
     code: 0,
     data
   })
 })
-router.get('/peachcollect',function (res, req) {
-  const data = require('xxx')
-  response.send({
+router.get('/peachcollect',function (req,res) {
+  // const data = require('xxx')
+  res.send({
     code: 0,
     data
   })
 })
-router.get('/xxx',function (res, req) {
-  const data = require('xxx')
-  response.send({
-    code: 0,
-    data
-  })
+// 详情信息
+
+router.get('/peachdetails',function (req,res) {
+  let {shangData} = req.query
+  switch (shangData) {
+    case 'shangdian':
+      data = require('./data/shangdian.json')
+      break;
+    case 'jingxuan':
+      data = require('./data/jingxuan.json')
+      break;
+    case 'shangjia':
+      data = require('./data/shangjia.json')
+      break;
+    case 'tuijiayi':
+      data = require('./data/tuijiayi.json')
+      break;
+  }
+  console.log(req.query)
+  // console.log(data)
+  res.send(data)
 })
-router.get('/Peachlogin',function (res, req) {
-  const data = require('xxx')
-  response.send({
+router.get('/xxx',function (req,res) {
+  // const data = require('xxx')
+  res.send(data)
+})
+router.get('/peachlogin',function (req,res) {
+  // const data = require('xxx')
+  res.send({
     code: 0,
     data
   })
@@ -99,9 +118,9 @@ router.get('/brands',function (req, res) {
   })
 })
 //二级路由
-router.get('/xxx/xxx',function (res, req) {
+/* router.get('/xxx/xxx',function (req, res) {
   
-  response.send('xxx')
+  // res.send('xxx')
 })
 
 
@@ -115,8 +134,12 @@ router.get('/xxx/xxx',function (res, req) {
 
 
 
+router.get('/xxx/xxx',function (req, res) {
+  
+  // res.send('xxx')
+}) */
 app.use(router)
-app.listen(5000,function (err) {
+app.listen('5000',function (err) {
   
 if (!err) {
   console.log('服务器启动成功了')
