@@ -29,9 +29,20 @@
           <div ref="scrollerRight" class="scrollbar-bswrapper">
             <ul class="scrollbar-list">
 
-              <li  class="scrollbar-list-item active" style="height:100px">
-                 <SubClass/>
+              <li v-for="(subItem, index1) in ClassImgs.subClasses" :key="index1" class="scrollbar-list-item active" style="height:100px">
+
+                <p  class="brandStyle">{{subItem.name}}</p>            
+                <div class="brandClass">
+
+                  <div v-for="(item, index) in ClassImgs.categoryItems" :key="index"  class="brandClassItem" style="height:100px">
+                    <img :src="item.src"  alt="">
+                    <p class="brandName">{{item.name}}</p>
+                  </div>
+
+                </div>
+                
               </li>
+
 
               <div class="blank-bottom"></div>
             </ul>
@@ -48,7 +59,6 @@
   import BScroll from '@better-scroll/core'
   import ScrollBar from '@better-scroll/scroll-bar'
   import ClassImgs from './classImgs.json'
-  import SubClass from './SubClass/SubClass'
 
   BScroll.use(ScrollBar)
   
@@ -58,9 +68,6 @@
       return {
         ClassImgs:{}
       }
-    },
-    components: {
-      SubClass
     },
     created() {
       this.bscroll = null
@@ -181,20 +188,20 @@
             .scrollbar-wrapper
               text-align: center
               color: #999
-            // .brandClass
-            //   display flex
-            //   flex-wrap wrap
-            //   width 306px
-            //   .brandClassItem
-            //     display flex
-            //     flex-direction column
-            //     width 101px
-            //     height 106px
-            //     text-align center
-            //     img 
-            //       width 61px
-            //       height 61px
-            //       padding-left 20px
+            .brandClass
+              display flex
+              flex-wrap wrap
+              width 306px
+              .brandClassItem
+                display flex
+                flex-direction column
+                width 101px
+                height 106px
+                text-align center
+                img 
+                  width 61px
+                  height 61px
+                  padding-left 20px
             .brandStyle
               height 40px
               line-height 40px

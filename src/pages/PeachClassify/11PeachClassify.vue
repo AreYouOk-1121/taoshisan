@@ -14,8 +14,8 @@
         <div class="scrollbar">
           <div ref="scroller" class="scrollbar-bswrapper">
             <ul class="scrollbar-list">
-              <li v-for="(categoryClass,index) in ClassImgs.categoryClasses" :key="index" class="scrollbar-list-item active">
-                {{ClassImgs.categoryClasses[index].name}}
+              <li v-for="i of 16" :key="i" class="scrollbar-list-item active">
+                {{ `为你推荐`}}
               </li>
               <div class="blank-bottom"></div>
             </ul>
@@ -28,11 +28,15 @@
         <div class="scrollbar">
           <div ref="scrollerRight" class="scrollbar-bswrapper">
             <ul class="scrollbar-list">
-
-              <li  class="scrollbar-list-item active" style="height:100px">
-                 <SubClass/>
+              <li v-for="i of 3" :key="i" class="scrollbar-list-item active" style="height:100px">
+                <p class="brandStyle">秋冬流行</p>
+                <div class="brandClass">
+                  <div v-for="i of 9" :key="i" class="brandClassItem" style="height:100px">
+                    <img src="https://img.alicdn.com/imgextra/i1/2053469401/O1CN01Y3loxV2JJhvJsPrnm-2053469401.jpg_310x310.jpg_.webp" alt="">
+                    <p class="brandName">韩都衣舍</p>
+                  </div>
+                </div>
               </li>
-
               <div class="blank-bottom"></div>
             </ul>
           </div>
@@ -47,29 +51,18 @@
   // 分类
   import BScroll from '@better-scroll/core'
   import ScrollBar from '@better-scroll/scroll-bar'
-  import ClassImgs from './classImgs.json'
-  import SubClass from './SubClass/SubClass'
 
   BScroll.use(ScrollBar)
   
   export default {
     name:"PeachClassify",
-    data(){
-      return {
-        ClassImgs:{}
-      }
-    },
-    components: {
-      SubClass
-    },
     created() {
       this.bscroll = null
       this.bscrollRight = null
-      this.ClassImgs = ClassImgs
-
     },
     mounted() {
       this.initBscroll()
+      
     },
     methods: {
       initBscroll() {
@@ -143,13 +136,11 @@
             height 45px
             line-height 45px
             list-style: none
-            text-align center
             &.active
               border-left: 2px solid red
             .scrollbar-wrapper
               text-align: center
               color: #999  
-              
     .nav-right
       width calc(100% - 68px)
       height 100%
@@ -181,20 +172,20 @@
             .scrollbar-wrapper
               text-align: center
               color: #999
-            // .brandClass
-            //   display flex
-            //   flex-wrap wrap
-            //   width 306px
-            //   .brandClassItem
-            //     display flex
-            //     flex-direction column
-            //     width 101px
-            //     height 106px
-            //     text-align center
-            //     img 
-            //       width 61px
-            //       height 61px
-            //       padding-left 20px
+            .brandClass
+              display flex
+              flex-wrap wrap
+              width 306px
+              .brandClassItem
+                display flex
+                flex-direction column
+                width 101px
+                height 106px
+                text-align center
+                img 
+                  width 61px
+                  height 61px
+                  padding-left 20px
             .brandStyle
               height 40px
               line-height 40px

@@ -1,0 +1,174 @@
+{
+    "categoryClasses":[
+        {
+            "name":"为你推荐",
+            "id":1
+        },
+        {
+            "name":"品牌精选",
+            "id":2
+
+        },
+        {
+            "name":"女装",
+            "id":3
+
+        },
+        {
+            "name":"男装",
+            "id":4
+
+        },
+        {
+            "name":"美食",
+            "id":5
+
+        },
+        {
+            "name":"美妆",
+            "id":6
+
+        },
+        {
+            "name":"居家日用",
+            "id":7
+
+        },
+        {
+            "name":"鞋品",
+            "id":8
+
+        },
+        {
+            "name":"数码家电",
+            "id":9
+
+        },
+        {
+            "name":"文娱车品",
+            "id":10
+
+        },
+        {
+            "name":"内衣",
+            "id":11
+
+        },
+        {
+            "name":"母婴",
+            "id":12
+
+        },
+        {
+            "name":"箱包",
+            "id":13
+
+        },
+        {
+            "name":"配饰",
+            "id":14
+
+        },
+        {
+            "name":"家装家纺",
+            "id":15
+
+        },
+        {
+            "name":"户外运动",
+            "id":16
+        }
+    ],
+    "subClasses":[
+        {
+            "name":"热门分类",
+            "parentId":1,
+            "id":11
+        },
+        {
+            "name":"推荐清单",
+            "parentId":1,
+            "id":12
+        },
+        {
+            "name":"热门品牌荟",
+            "parentId":2,
+            "id":21
+        },
+        {
+            "name":"品牌优选",
+            "parentId":2,
+            "id":22
+        }
+    ],
+    "categoryItems":[
+        {
+            "src":"https://img.alicdn.com/imgextra/i3/2053469401/O1CN01B9RARJ2JJhyUAHxf6_!!2053469401.png_310x310.jpg_.webp",
+            "name":"男士潮装",
+            "parentId":11
+        },
+        {
+            "src":"https://img.alicdn.com/imgextra/i4/2053469401/O1CN01lbMOAc2JJhydLRRSu_!!2053469401.png_310x310.jpg_.webp",
+            "name":"换季收纳",
+            "parentId":11
+        },
+        {
+            "src":"https://img.alicdn.com/imgextra/i3/2053469401/O1CN01jovxys2JJhyfk5w9V_!!2053469401.png_310x310.jpg_.webp",
+            "name":"女士专用",
+            "parentId":11
+        },
+        {
+            "src":"https://img.alicdn.com/imgextra/i1/2053469401/O1CN016cEUcb2JJhyeFuhyG_!!2053469401.png_310x310.jpg_.webp",
+            "name":"移动电源",
+            "parentId":11
+        },
+        {
+            "src":"https://img.alicdn.com/imgextra/i3/2053469401/O1CN01uiLwGQ2JJhyfk7oXa_!!2053469401.png_310x310.jpg_.webp",
+            "name":"时尚彩妆",
+            "parentId":11
+        },
+        {
+            "src":"https://img.alicdn.com/imgextra/i2/2053469401/O1CN01YO8lgq2JJhyfk5OsJ_!!2053469401.png_310x310.jpg_.webp",
+            "name":"假日零食",
+            "parentId":11
+        },
+        {
+            "src":"https://img.alicdn.com/imgextra/i2/2053469401/O1CN01Ntf7uB2JJhyYnjvSF_!!2053469401.png_310x310.jpg_.webp",
+            "name":"当季流行",
+            "parentId":12
+        },
+        {
+            "src":"https://img.alicdn.com/imgextra/i2/2053469401/O1CN01tvVx3w2JJhyfk4vnD_!!2053469401.png_310x310.jpg_.webp",
+            "name":"畅想音界",
+            "parentId":12
+        },
+        {
+            "src":"https://img.alicdn.com/imgextra/i1/2053469401/O1CN01DUJtlx2JJhyc4RIpS_!!2053469401.png_310x310.jpg_.webp",
+            "name":"冬季养生茶",
+            "parentId":12
+        },
+        {
+            "src":"https://img.alicdn.com/imgextra/i1/2053469401/O1CN018wUdJi2JJhyclu1AY_!!2053469401.png_310x310.jpg_.webp",
+            "name":"家有萌宝",
+            "parentId":12
+        },
+        {
+            "src":"https://img.alicdn.com/imgextra/i3/2053469401/O1CN01u7xMnl2JJhyclu5Jo_!!2053469401.png_310x310.jpg_.webp",
+            "name":"好物换新",
+            "parentId":12
+        },
+        {
+            "src":"https://img.alicdn.com/imgextra/i4/2053469401/O1CN01i682072JJhyYnjSMX_!!2053469401.png_310x310.jpg_.webp",
+            "name":"防寒保暖",
+            "parentId":12
+        }
+    ]
+
+}
+
+
+
+
+
+
+
