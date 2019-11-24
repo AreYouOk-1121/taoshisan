@@ -7,7 +7,9 @@ import {
   SAVE_LOGIN,
   SAVE_PERSONAL,
   SAVE_POSTAGE,
-  SAVE_BRANDS
+  SAVE_BRANDS,
+  SAVE_SHANGDIAN,
+  SAVE_SHANGJIA
 } from './mutations-type'
 export default {
   [SAVE_COLLECT](state,{
@@ -17,5 +19,11 @@ export default {
   },
   [SAVE_BRANDS](state,{brands}){
     state.brands = brands
-  }
+  },
+  [SAVE_SHANGDIAN](state,{shangDian}){
+    state.shangDian = shangDian
+  },
+  [SAVE_SHANGJIA](state,{shangJia}){
+    state.shangJia = shangJia
+  },
 }

@@ -8,6 +8,7 @@ Vue.use(VueRouter);
 
 // 生成路由器管理路由
 const router = new VueRouter({
+  mode:'history',
   routes
 })
 

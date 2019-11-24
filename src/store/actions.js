@@ -7,10 +7,16 @@ import {
   SAVE_LOGIN,
   SAVE_PERSONAL,
   SAVE_POSTAGE,
-  SAVE_BRANDS
+  SAVE_BRANDS,
+  SAVE_SHANGDIAN,
+  SAVE_SHANGJIA
 } from './mutations-type';
 
-import { getbrands, getpeachCollect } from "../api";
+import { 
+  getbrands, 
+  getpeachCollect,
+  reqShangDian
+} from "../api";
 
 export default {
   async getpeachCollectAction({
@@ -20,6 +26,26 @@ export default {
     if (result.code === 0) {
       commit(SAVE_COLLECT, {
         collect:result.data
+      })
+    }
+  },
+  async getShangDian({
+    commit
+  }) {
+    let result = await reqShangDian('shangdian')
+    if (result.code === 0) {
+      commit(SAVE_SHANGDIAN, {
+        shangDian:result.data
+      })
+    }
+  },
+  async getShangJia({
+    commit
+  }) {
+    let result = await reqShangDian('shangjia')
+    if (result.code === 0) {
+      commit(SAVE_SHANGJIA, {
+        shangJia:result.data
       })
     }
   },
