@@ -9,7 +9,8 @@ import {
   SAVE_POSTAGE,
   SAVE_BRANDS,
   SAVE_SHANGDIAN,
-  SAVE_SHANGJIA
+  SAVE_SHANGJIA,
+  SAVE_SHANGTUIJIAN
 } from './mutations-type';
 
 import { 
@@ -46,6 +47,16 @@ export default {
     if (result.code === 0) {
       commit(SAVE_SHANGJIA, {
         shangJia:result.data
+      })
+    }
+  },
+  async getTuiJia({
+    commit
+  }) {
+    let result = await reqShangDian('tuijiayi')
+    if (result.code === 0) {
+      commit(SAVE_SHANGTUIJIAN, {
+        tuiJia:result.data
       })
     }
   },

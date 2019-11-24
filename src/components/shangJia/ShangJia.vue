@@ -18,7 +18,12 @@
 <script type="text/ecmascript-6">
   export default {
     name:"ShangJia",
-    props:['shangName']
+    props:{
+      shangName:{
+        type:Object,
+        required:true
+      }
+    }
   }
 </script>
 

@@ -8,6 +8,7 @@ export const SAVE_POSTAGE = 'save_postage'
 export const SAVE_BRANDS = 'save_brands'  //更多商品数据
 export const SAVE_SHANGDIAN = 'save_shangdian'  //更多商品数据
 export const SAVE_SHANGJIA = 'save_shangjia'  //更多商品数据
+export const SAVE_SHANGTUIJIAN = 'save_shangtuijian'  //更多商品数据
 
 
 

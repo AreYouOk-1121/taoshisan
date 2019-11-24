@@ -14,7 +14,7 @@
       <!-- 商家 -->
       <ShangJia :shangName = "shangJia? shangJia : {}"/>
       <!-- 相似推荐 -->
-      <TuiJian/>
+      <TuiJian :shangTuijian="tuiJia"/>
     </div>
     <div class="DeatailCollect">
       <div class="shareCollect">
@@ -68,11 +68,13 @@
       ...mapState({
         shangDian: state => state.shangDian,
         shangJia: state => state.shangJia,
+        tuiJia: state => state.tuiJia,
       })
     },
     mounted() {
       this.$store.dispatch('getShangDian')
       this.$store.dispatch('getShangJia')
+      this.$store.dispatch('getTuiJia')
     },
   }
 </script>

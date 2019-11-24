@@ -6,36 +6,12 @@
     <!-- 推荐组件 -->
     <div class="RecommendMerchant">
       <ul>
-        <li>
-          <img src="//img.alicdn.com/imgextra/i3/4118947871/O1CN012fdNAE280xzJsedWH_!!4118947871.jpg_310x310.jpg_.webp" alt="tu">
-          <div>冬季防滑加绒中年雪地靴</div>
-          <div>60元劵</div>
+        <li v-for="(tuijian, index) in shangTuijian" :key="index">
+          <img :src="tuijian.pic" alt="tu">
+          <div>{{tuijian.dtitle}}</div>
+          <div>{{tuijian.quanJine}}}元劵</div>
           <div>
-            劵后价<em>￥49.9</em>
-          </div>
-        </li>
-        <li>
-          <img src="//img.alicdn.com/imgextra/i3/4118947871/O1CN012fdNAE280xzJsedWH_!!4118947871.jpg_310x310.jpg_.webp" alt="tu">
-          <div>冬季防滑加绒中年雪地靴</div>
-          <div>60元劵</div>
-          <div>
-            劵后价<em>￥49.9</em>
-          </div>
-        </li>
-        <li>
-          <img src="//img.alicdn.com/imgextra/i3/4118947871/O1CN012fdNAE280xzJsedWH_!!4118947871.jpg_310x310.jpg_.webp" alt="tu">
-          <div>冬季防滑加绒中年雪地靴</div>
-          <div>60元劵</div>
-          <div>
-            劵后价<em>￥49.9</em>
-          </div>
-        </li>
-        <li>
-          <img src="//img.alicdn.com/imgextra/i3/4118947871/O1CN012fdNAE280xzJsedWH_!!4118947871.jpg_310x310.jpg_.webp" alt="tu">
-          <div>冬季防滑加绒中年雪地靴</div>
-          <div>60元劵</div>
-          <div>
-            劵后价<em>￥49.9</em>
+            劵后价<em>￥{{tuijian.jiage}}</em>
           </div>
         </li>
       </ul>
@@ -45,7 +21,13 @@
 
 <script type="text/ecmascript-6">
   export default {
-    name:"TuiJian"
+    name:"TuiJian",
+    props:{
+      shangTuijian:{
+        type:Array,
+        required:true
+      }
+    }
   }
 </script>
 
