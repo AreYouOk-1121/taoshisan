@@ -1,7 +1,7 @@
 <template>
   <div id="wn-PeachDeatail">
     <div class="DeatailTitle" v-show="true">
-      <div><</div>
+      <div @click="$router.back()"><</div>
       <span>商品</span>
       <span>推荐</span>
       <div>. . .</div>

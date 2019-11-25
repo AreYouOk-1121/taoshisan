@@ -6,16 +6,16 @@
       <div class="searchIcon">
         <svg t="1574329713586" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4621" width="24" height="24"><path d="M845.31681 804.279033 669.806116 628.768339c39.298021-47.792125 60.686788-107.250849 60.686788-169.984409 0-71.637018-27.938437-138.975815-78.493704-189.63342-50.657605-50.657605-117.996402-78.493704-189.63342-78.493704s-138.975815 27.938437-189.63342 78.493704c-50.657605 50.657605-78.493704 117.996402-78.493704 189.63342s27.938437 138.975815 78.493704 189.63342c50.657605 50.657605 117.996402 78.493704 189.63342 78.493704 65.394363 0 127.206876-23.230861 176.022387-65.906056l174.999001 174.999001c4.40056 4.40056 10.131521 6.54967 15.964821 6.54967s11.564261-2.149111 15.964821-6.54967C854.117929 827.305217 854.117929 813.080152 845.31681 804.279033zM239.267639 458.78393c0-123.010993 100.087148-223.098141 223.098141-223.098141s223.098141 100.087148 223.098141 223.098141-100.087148 223.098141-223.098141 223.098141S239.267639 581.794923 239.267639 458.78393z" p-id="4622" fill="#bfbfbf"></path></svg>
       </div>
-    </div> 
+    </div>
     <div class="nav">
       <div class="nav-left">
         <div class="blank-top">
         </div>
         <div class="scrollbar">
           <div ref="scroller" class="scrollbar-bswrapper">
-            <ul ref="navUl" class="scrollbar-list">
-              <li @click="getNavIndex(index)" v-for="(item,index) in ClassImgs" :key="index" class="scrollbar-list-item" :class="{active:navIndex===index}">
-                {{item.categoryClassName}}
+            <ul class="scrollbar-list">
+              <li v-for="i of 16" :key="i" class="scrollbar-list-item active">
+                {{ `为你推荐`}}
               </li>
               <div class="blank-bottom"></div>
             </ul>
@@ -28,11 +28,15 @@
         <div class="scrollbar">
           <div ref="scrollerRight" class="scrollbar-bswrapper">
             <ul class="scrollbar-list">
-
-              <li  class="scrollbar-list-item" style="height:100px">
-                 <SubClass/>
+              <li v-for="i of 3" :key="i" class="scrollbar-list-item active" style="height:100px">
+                <p class="brandStyle">秋冬流行</p>
+                <div class="brandClass">
+                  <div v-for="i of 9" :key="i" class="brandClassItem" style="height:100px">
+                    <img src="https://img.alicdn.com/imgextra/i1/2053469401/O1CN01Y3loxV2JJhvJsPrnm-2053469401.jpg_310x310.jpg_.webp" alt="">
+                    <p class="brandName">韩都衣舍</p>
+                  </div>
+                </div>
               </li>
-
               <div class="blank-bottom"></div>
             </ul>
           </div>
@@ -47,86 +51,32 @@
   // 分类
   import BScroll from '@better-scroll/core'
   import ScrollBar from '@better-scroll/scroll-bar'
-  import router from 'vue-router'
-  import ClassImgs from './classImg.json'
-  import SubClass from './SubClass/SubClass'
-  import MouseWheel from '@better-scroll/mouse-wheel'   //11
 
   BScroll.use(ScrollBar)
-
-  
-  BScroll.use(MouseWheel)    //11
   
   export default {
     name:"PeachClassify",
-    data(){
-      return {
-        ClassImgs:{},     
-        navIndex:0
-      }
-    },                                        
-    components: {
-      SubClass
-    },
     created() {
       this.bscroll = null
       this.bscrollRight = null
-      this.ClassImgs = ClassImgs
-
     },
     mounted() {
       this.initBscroll()
-      // ,
-      // this.getNavUl()
+      
     },
     methods: {
       initBscroll() {
         this.bscroll = new BScroll(this.$refs.scroller, {
           scrollY: true,
-          scrollbar: false,
-          click:true,
-          interactive: false,
-          bounce:{
-            top:false,
-            bottom:false
-          },
-          //滚轮
-          mouseWheel: {
-            speed: 200,
-            invert: false,
-            easeTime: 0
-          }
+          scrollbar: true
         })
         this.bscrollRight = new BScroll(this.$refs.scrollerRight, {
           scrollY: true,
-          scrollbar: false,
-          click:true,
-          interactive: true,
-          bounce:{
-          top:false,
-          bottom:false
-        },
-          //滚轮
-          mouseWheel: {
-            speed: 200,
-            invert: false,
-            easeTime: 0
-              }
+          scrollbar: true
         })
-      },
-      getNavIndex(index){
-        let navIndex = index
-        this.navIndex = navIndex
-        console.log(navIndex)
-        // this.$router.push({name:'subclass',params:{index}})
       }
     }
-  }     
-
-
-
-
-
+  }
 
 </script>
 
@@ -186,15 +136,11 @@
             height 45px
             line-height 45px
             list-style: none
-            text-align center
-            background #F4F4F4
             &.active
               border-left: 2px solid red
-              background #fff
             .scrollbar-wrapper
               text-align: center
               color: #999  
-              
     .nav-right
       width calc(100% - 68px)
       height 100%
@@ -226,20 +172,20 @@
             .scrollbar-wrapper
               text-align: center
               color: #999
-            // .brandClass
-            //   display flex
-            //   flex-wrap wrap
-            //   width 306px
-            //   .brandClassItem
-            //     display flex
-            //     flex-direction column
-            //     width 101px
-            //     height 106px
-            //     text-align center
-            //     img 
-            //       width 61px
-            //       height 61px
-            //       padding-left 20px
+            .brandClass
+              display flex
+              flex-wrap wrap
+              width 306px
+              .brandClassItem
+                display flex
+                flex-direction column
+                width 101px
+                height 106px
+                text-align center
+                img 
+                  width 61px
+                  height 61px
+                  padding-left 20px
             .brandStyle
               height 40px
               line-height 40px

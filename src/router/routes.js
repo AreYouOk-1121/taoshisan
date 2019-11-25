@@ -12,16 +12,22 @@ import HomeShops from "../pages/homeShops/homeShops.vue";
 import HomeMoreBrand from "../pages/HomeMoreBrand/HomeMoreBrand.vue";
 import Home from "../pages/PeachPostage/Home/Home.vue";
 import Jingxuan from "../pages/PeachPostage/Jingxuan/Jingxuan.vue";
+import SubClass from '../pages/PeachClassify/SubClass/SubClass.vue'
+import CassNavyRight from '../pages/PeachClassify/CassNavyRight/CassNavyRight.vue'
 
 export default [
   {
     path:'/peachclassify',
-    component:PeachClassify
-  },
-  {
-    path:'/peachcollect',
-    component:PeachCollect
-  },
+    component:PeachClassify,
+    children:[{
+      path:'peachclassify/cassnavyright',
+      component:CassNavyRight
+    }]
+  }, 
+  // {
+  //   path:'/subclass',
+  //   component:SubClass
+  // },
   {
     path:'/peachhome',
     component:PeachHome
