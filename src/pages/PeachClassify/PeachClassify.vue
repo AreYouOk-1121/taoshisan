@@ -14,8 +14,11 @@
         <div class="scrollbar">
           <div ref="scroller" class="scrollbar-bswrapper">
             <ul ref="navUl" class="scrollbar-list">
-              <li @click="getNavIndex(index)" v-for="(item,index) in ClassImgs" :key="index" class="scrollbar-list-item" :class="{active:navIndex===index}">
-                {{item.categoryClassName}}
+              <li @click="getNavIndex(index,item.id)" v-for="(item,index) in ClassImgs" :key="item.id" class="scrollbar-list-item" :class="{active:navIndex===index}">
+              
+                <router-link :to="{name:'detail',params:{id:item.id}}">{{item.categoryClassName}}</router-link>
+
+
               </li>
               <div class="blank-bottom"></div>
             </ul>
@@ -53,17 +56,18 @@
             </ul>
           </div>
         </div>
+            <router-view></router-view>
       </div>
     </div>
-    
+
   </div>
-</template>
+</template> 
 
 <script type="text/ecmascript-6">
   // 分类
   import BScroll from '@better-scroll/core'
   import ScrollBar from '@better-scroll/scroll-bar'
-  import router from 'vue-router'
+  import router from 'vue-router' 
   import ClassImgs from './classImg.json'
   import MouseWheel from '@better-scroll/mouse-wheel'   //11
 
@@ -77,19 +81,16 @@
     data(){
       return {
         ClassImgs:{},     
-        navIndex:0
+        navIndex:1
       }
     },                                        
     created() {
       this.bscroll = null
       this.bscrollRight = null
       this.ClassImgs = ClassImgs
-
     },
     mounted() {
       this.initBscroll()
-      // ,
-      // this.getNavUl()
     },
     methods: {
       initBscroll() {
@@ -126,16 +127,15 @@
               }
         })
       },
-      getNavIndex(index){
+      getNavIndex(index,id){
         let navIndex = index
         this.navIndex = navIndex
         console.log(navIndex)
-        // this.$router.push({name:'subclass',params:{index}})
+        this.$router.push({name:'detail',params:{id}})
         // console.log(this.$router.push({name:'subclass',params:{index}}))
       }
     }
   }     
-
 
 
 </script>
