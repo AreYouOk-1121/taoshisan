@@ -1,56 +1,42 @@
 <template>
   <div id="content-body">
       <header class="header-top">
-          <span><</span>
+        <i class="iconfont iconfanhui"></i>
              <a>咚咚抢</a>
-              <span>:</span>
+              <i class="iconfont iconfenleishouye"></i>
       </header>
       <div class="content-top">
           <img src="https://img.alicdn.com/imgextra/i4/2053469401/O1CN01iGGS0k2JJhtBDpTGy-2053469401.jpg?v=20191021516399">
-        <div class="conent-Nav">
-          <ul class="ulTop">
-            <li v-for="(arr,index) in Arr" :key="index" :class="{active:index === indexNew}" @click="goBottom(index)">
-              {{arr}}
-            </li>
-          </ul>
-       </div>
-       
-      <div class="content-shop">
-        
-        <ul class="ulBotttom">
-          <li v-if="indexNew === index" v-for="(Arr,index) in Arrconent " :key="index">{{Arr}}</li>
-        </ul>
-        <!-- <ul class="ulBotttom" style="height:10px;background-color:#aaa;display:flex;">
-          <li v-if="indexNew === index" v-for="(arr, index) in Arrconent" :key="index" style="height:66px;font-size:25px;padding: 0 5px">{{arr}}</li>
-        </ul> -->
-
-      </div>
+        <div class="tab">
+            <div class="tab-left">
+                  <router-link to="/peachreshtobuy/Abouttorush"><a>开抢</a></router-link>
+            </div>
+            <div class="tab-Central">
+                  <router-link to="/peachreshtobuy/Openandgrab"><a>开抢</a></router-link>
+            </div>
+            <div class="tab-right">
+                  <router-link to="/peachreshtobuy/Openrobbing"><a>开抢</a></router-link>
+            </div>
     </div>
+  <router-view></router-view>  
   </div>
+  </div>
+  
 </template>
 
 <script type="text/ecmascript-6">
-
- 
-  let items = ['08:00已开抢','9:00已开抢','12:00已开抢','01:23即将开抢','05:02正在开抢','08:30即将开抢']
-  let Arrconent = ['已开抢','已开抢','已开抢','即将开抢','正在开抢','即将开抢']
-
   export default {
     data() {
       return {
-      //  active: 2,
-       indexNew:0,
-       Arr:[],
-       Arrconent:[]
+      
       }
     },
     mounted() {
-      this.Arr = items;
-      this.Arrconent = Arrconent
+     
     },
     methods: {
       goBottom(index){
-        let 
+      
         this.indexNew  = index
         console.log(this.indexNew)
       }
@@ -73,8 +59,12 @@
     height 44px
     background red
     line-height 44px
+    i 
+      font-size 30px 
     a
-      font-size 5px
+      font-size 20px
+      font-weight bold  
+      color black
   .content-top
     position relative
     width 375px
@@ -82,39 +72,41 @@
     img 
       width 375px
       height 200px
-    .conent-Nav
+    .tab
       position absolute
-      top 150px
-      .ulTop
-        display flex
-        justify-content:space-between
-        li
-          margin 0px 10px 0px 10px
-          width 40px
-          height 49px
-          &.active{
-            background $green
-          }          
-
-        
-
-  .content-shop
-    height 30px
-    .ulBotttom
+      top 140px
       display flex
+      justify-content:space-around
+      .tab-left
+        width 50px
+        height 50px
+        background red
+        font-size 20px
+        margin 0px 40px 0px 40px
+        a
+          color black
+          font-weight bold
+      .tab-Central
+        width 50px
+        height 50px
+        background red
+        margin 0px 40px 0px 40px
+        font-size 20px
+        a
+          color black
+          font-weight bold
+      .tab-right
+        width 50px
+        height 50px
+        background red
+        margin 0px 20px 0px 40px
+        font-size 20px
+        a
+          color black
+          font-weight bold
 
 
 
-        
-        
-
-
-  
-     
-      
-    
-            
-    
     
    
       

@@ -13,6 +13,9 @@ import HomeMoreBrand from "../pages/HomeMoreBrand/HomeMoreBrand.vue";
 import Home from "../pages/PeachPostage/Home/Home.vue";
 import Jingxuan from "../pages/PeachPostage/Jingxuan/Jingxuan.vue";
 import Reshtobuy from '../pages/Rushtobuy/Rushtobuy.vue'
+import Abouttorush from '../pages/Rushtobuy/Abouttorush/Abouttorush.vue'
+import Openandgrab from '../pages/Rushtobuy/Openandgrab/Openandgrab.vue'
+import Openrobbing from '../pages/Rushtobuy/Openrobbing/Openrobbing.vue'
 
 export default [
   {
@@ -52,7 +55,8 @@ export default [
   },
   {
     path:'/peachpostage',
-    component:PeachPostage,
+    component: PeachPostage,
+    
     children: [
       {
         path: '/peachpostage/home',
@@ -83,7 +87,24 @@ export default [
   },
   {
     path:'/peachreshtobuy',
-    component:Reshtobuy
+    component: Reshtobuy,
+    children: [
+      {
+        path: 'Abouttorush',
+        component: Abouttorush,
+      },
+      {
+        path: '/peachreshtobuy/Openandgrab',
+        component: Openandgrab,
+      },
+      {
+        path: '/peachreshtobuy/Openrobbing',
+        component: Openrobbing,
+      }
+
+
+    ]
+    
   },
 
   {

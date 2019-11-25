@@ -72,7 +72,7 @@ import {mapState} from 'vuex'
   .info
     width 375px
     height 205px  
-    background red
+    background-image linear-gradient(to right,#FBAA58 0,#FA4DBE 100%)
     border-radius 0px 0px 50px 50px;
     .top
       position relative

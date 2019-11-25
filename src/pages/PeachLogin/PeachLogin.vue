@@ -31,8 +31,8 @@
             </section>
 
             <section class="login_hint">
-              温馨提示：未注册淘十三帐号的，登录时将自动注册，且代表已同意
-              <a href="javascript:;">《淘十三用户协议》</a>
+             注：未注册淘十三帐号的，登录时将自动注册，且代表已同意
+              <a href="javascript:;" style="color:red">《淘十三用户协议》</a>
             </section>
    </div>
          <div :class="{on: isPassWordLogin}">
