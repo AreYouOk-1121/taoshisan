@@ -1,6 +1,6 @@
 <template>
   <div id="y_homeShops">
-    <!-- 头部 -->
+    <!-- 头部 --> 
     <header class="header">
       <div class="header-top">
         <div class="icon_header">
@@ -16,20 +16,7 @@
       <!-- better-scroll滑动 -->
       <div class="wrapper">
         <ul class="content">
-          <li><a href="javascript:;">精品</a></li>
-          <li><a href="javascript:;">精品</a></li>
-          <li><a href="javascript:;">精品</a></li>
-          <li><a href="javascript:;">精品</a></li>
-          <li><a href="javascript:;">精品</a></li>
-          <li><a href="javascript:;">精品</a></li>
-          <li><a href="javascript:;">精品</a></li>
-          <li><a href="javascript:;">精品</a></li>
-          <li><a href="javascript:;">精品</a></li>
-          <li><a href="javascript:;">精品</a></li>
-          <li><a href="javascript:;">精品</a></li>
-          <li><a href="javascript:;">精品</a></li>
-          <li><a href="javascript:;">精品</a></li>
-          <li><a href="javascript:;">精品</a></li>
+          <li v-for="(good,index) in goods" :key="index"><a href="javascript:;">精品</a></li>
         </ul>
       </div>
     </header>
@@ -50,7 +37,7 @@
           </a>
           <div class="price">
             <div class="new-price">劵后价¥{{good.newPrice}}</div>
-            <a href="javascript:;" @click="goPeachDetails(index)">立即抢购</a>
+            <a href="javascript:;" @click="goPeachDetails(good.id)">立即抢购</a>
           </div>
         </div>
       </div>
@@ -70,8 +57,13 @@ export default {
     goPeachHome(){
       this.$router.back()  
     },
-    goPeachDetails(index){ //跳转详情页  
-      this.$router.push('/peachdetails')
+    goPeachDetails(id){ //跳转详情页,通过query传参,params要提要:id站位    
+      this.$router.push({
+        path:'/peachdetails',
+        query:{
+          id:id
+        }
+      })
     }
   },
 

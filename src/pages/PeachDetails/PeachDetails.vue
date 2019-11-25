@@ -1,6 +1,6 @@
 <template>
-  <div id="wn-PeachDeatail">
-    <div class="DeatailTitle" v-show="false">
+  <div id="wn-PeachDeatail"><!-- 这里不能直接隐藏 -->
+    <div class="DeatailTitle" v-show="true">
       <div><</div>
       <span>商品</span>
       <span>推荐</span>
@@ -16,7 +16,7 @@
       <!-- 相似推荐 -->
       <TuiJian :shangTuijian="tuiJia"/>
       <!-- 精选 -->
-      <JingXuan />
+      <JingXuan :jingXuanBiao="tuiJia"/>
     </div>
     <div class="DeatailCollect">
       <div class="shareCollect">
@@ -58,7 +58,7 @@ import ShangJia from '../../components/shangJia/ShangJia'
 import TuiJian from '../../components/TuiJian/TuiJian'
 import JingXuan from '../../components/JingXuan/JingXuan'
 import {mapState} from 'vuex'
-import { SAVE_GESHOPCOLLECTS } from "../../store/mutations-type";
+import { SAVE_GESHOPCOLLECTS,SAVE_SHOPCOLLECT } from "../../store/mutations-type";
   // 分类
 
   
@@ -70,13 +70,7 @@ import { SAVE_GESHOPCOLLECTS } from "../../store/mutations-type";
         ShopCollect:false//初始化收藏默认不高亮 
       }
     },
-    components:{
-      BigImage,
-      ShangPin,
-      ShangJia,
-      TuiJian,
-      JingXuan
-    },
+ /* 在商品列表跳转到详情页应该传递一个id值,让详情页显示对应商品 */   
     computed: {
       ...mapState({
         shangDian: state => state.shangDian,
@@ -85,6 +79,7 @@ import { SAVE_GESHOPCOLLECTS } from "../../store/mutations-type";
       })
     },
     mounted() {
+       console.log(this.$route.query.id);//接受id值,要显示对应id的对象数据
       this.$store.dispatch('getShangDian')
       this.$store.dispatch('getShangJia')
       this.$store.dispatch('getTuiJia')
@@ -94,6 +89,13 @@ import { SAVE_GESHOPCOLLECTS } from "../../store/mutations-type";
         this.ShopCollect = !this.ShopCollect
         this.$store.commit(SAVE_GESHOPCOLLECTS,{ShopCollects})
       }
+    },
+    components:{
+      BigImage,
+      ShangPin,
+      ShangJia,
+      TuiJian,
+      JingXuan
     }
   }
 </script>

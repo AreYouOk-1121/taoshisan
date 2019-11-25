@@ -13,7 +13,8 @@ import {
   SAVE_SHANGTUIJIAN,
   SAVE_GOODS,
   SAVE_GESHOPCOLLECTS, 
-  SAVE_GETNAVS
+  SAVE_GETNAVS,
+  SAVE_SHOPCOLLECT
 } from './mutations-type'
 
 export default {
@@ -47,6 +48,5 @@ export default {
   },
   [SAVE_SHANGTUIJIAN](state,{tuiJia}){
     state.tuiJia = tuiJia
-  },
-
+  }
 }
