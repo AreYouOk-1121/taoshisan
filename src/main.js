@@ -29,11 +29,17 @@ Vue.use(Row).use(Col)
 
 Vue.config.productionTip = false
 
-Vue.component(Navbar.name, Navbar);
-Vue.component(TabItem.name, TabItem);
+
+
+
+Vue.config.productionTip = false;
+
+
+Vue.component(Navbar.name, Navbar)
+Vue.component(TabItem.name, TabItem)
 Vue.component(TabContainer.name, TabContainer);
 Vue.component(TabContainerItem.name, TabContainerItem);
-Vue.component(Cell.name, Cell);
+Vue.component(Cell.name, Cell)
 
 Vue.use(InfiniteScroll);
 Vue.use(VueLazyload,{

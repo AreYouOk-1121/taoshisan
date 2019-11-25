@@ -22,11 +22,6 @@ export const baoyou = ()=>ajax({
   url:'/brands'  //地址看接口文档
 })
 
-// 定义9.9包邮请求的方法
-export const getNIne = ()=>ajax({
-  url:'/peachpostage'  
-
-})
 
 // 详情页请求数据
 export const reqShangDian = (shangData)=>ajax({
@@ -35,3 +30,11 @@ export const reqShangDian = (shangData)=>ajax({
     shangData
   }
 })
+
+
+// 定义9.9包邮请求的方法静
+export const getby = ()=> ajax({
+  url:'/peachpostage'  
+
+})
+

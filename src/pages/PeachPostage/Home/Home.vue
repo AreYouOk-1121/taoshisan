@@ -6,13 +6,13 @@
       </div>
       <!-- 列表 -->
       <div class="List">
-        <!-- 每一项 -->
-          <div class="ListItem" v-for="(item,index) in items" :key="index">
+        <!-- 每一项    item是数组中的每一个对象           -->
+          <div class="ListItem" v-for="(item,index) in byDatas" :key="index" @click="TOGOXQ">
               <a>
-                <img :src="item.pic" alt="">
+                <img v-lazy="item.pic" alt="">
               </a>
               <div class="SKYCAT">
-                  <span class="cat">天猫</span>
+                  <span class="cat">{{item.p_labels.title}}</span></span>
                   <span class="haoping">113万好评！家用2/5卷100只垃圾袋</span>
               </div>
               <div class="YHQ">
@@ -36,7 +36,7 @@
 </template>
 
 <script type="text/ecmascript-6">
-import datas from "../../../../Peach_server/data/home.json";
+import { mapState } from "vuex";
   export default {
     name:'Home',
     props:{
@@ -44,14 +44,24 @@ import datas from "../../../../Peach_server/data/home.json";
         type:Number,
       }
     },
-    data() {
-      return {
-        items:[]
+   
+   
+    computed: {
+      ...mapState({
+     
+          byDatas: state => state.byDatas.homedata     // byDatas.homedata 取到homedata 的数组 
+      })
+    },
+
+    methods: {
+      TOGOXQ(){
+        // this.$router.replace('/peachchdetails')   replace 不能回退 push 可以回退 
+        console.log(123)
+        this.$router.push('/peachdetails')
       }
     },
-    mounted() {
-     this.items = datas.data.data
-    },
+
+
   }
 </script>
 

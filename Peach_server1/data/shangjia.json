@@ -1,0 +1,18 @@
+{
+  "time": 1574440886351,
+  "code": 0,
+  "msg": "成功",
+  "data": {
+    "sellerId": "199085155",
+    "dsrScore": 4.8,
+    "shipScore": 4.8,
+    "serviceScore": 4.8,
+    "dsrPercent": 25.87,
+    "shipPercent": 18.44,
+    "servicePercent": 24.79,
+    "shopLogo": "https://img.alicdn.com/imgextra//i1/199085155/O1CN01KHW8Mb1nx2EJ37u8W_!!199085155.jpg",
+    "shopName": "卜珂巧克力旗舰店",
+    "tmall": 1,
+    "categoryId": 124304001
+  }
+}

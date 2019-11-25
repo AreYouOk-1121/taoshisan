@@ -1,0 +1,292 @@
+{
+  "time": 1574443585169,
+  "code": 0,
+  "msg": "成功",
+  "data": [
+    {
+    "id": 23498652,
+    "yuanjia": 9.9,
+    "jiage": 6.9,
+    "istmall": 1,
+    "xiaoliang": 1188484,
+    "quanNum": 37000,
+    "quanOver": 63000,
+    "quanJine": 3,
+    "huodongType": 2,
+    "pic": "https://img.alicdn.com/imgextra/i4/370875305/O1CN018vpC461p3jhGgWKQd_!!370875305.png",
+    "renqi": 0,
+    "salesNum": "67809",
+    "createTime": "2019-11-23 01:23:12",
+    "market_group": [
+    null
+    ],
+    "dtitle": "新券！10包【植护旗舰店】原木抽纸"
+    },
+    {
+    "id": 23502561,
+    "yuanjia": 11.8,
+    "jiage": 10.8,
+    "istmall": 1,
+    "xiaoliang": 161928,
+    "quanNum": 46000,
+    "quanOver": 54000,
+    "quanJine": 1,
+    "huodongType": 1,
+    "pic": "//img.alicdn.com/imgextra/i4/711416793/O1CN01ot3mbn203F2dmNxs8_!!711416793.jpg",
+    "renqi": 0,
+    "salesNum": "58330",
+    "createTime": "2019-11-23 01:23:12",
+    "market_group": [
+    null
+    ],
+    "dtitle": "【只一次！速度抢】居家厚底情侣毛毛棉拖鞋"
+    },
+    {
+    "id": 23490482,
+    "yuanjia": 23.9,
+    "jiage": 13.9,
+    "istmall": 1,
+    "xiaoliang": 203908,
+    "quanNum": 91000,
+    "quanOver": 9000,
+    "quanJine": 10,
+    "huodongType": 1,
+    "pic": "https://img.alicdn.com/imgextra/i4/3400390945/O1CN01GlXr1l1Iqqq0e70Jt_!!3400390945.jpg",
+    "renqi": 0,
+    "salesNum": "49731",
+    "createTime": "2019-11-23 01:23:12",
+    "market_group": [
+    null
+    ],
+    "dtitle": "【拍5件】舌里全麦面包吐司共2斤整箱"
+    },
+    {
+    "id": 23487941,
+    "yuanjia": 39.9,
+    "jiage": 9.9,
+    "istmall": 1,
+    "xiaoliang": 744966,
+    "quanNum": 69000,
+    "quanOver": 31000,
+    "quanJine": 30,
+    "huodongType": 1,
+    "pic": "https://img.alicdn.com/imgextra/i4/2403902537/O1CN019B10uv1UbzMSNsjcY_!!2403902537.jpg",
+    "renqi": 0,
+    "salesNum": "49459",
+    "createTime": "2019-11-23 01:23:12",
+    "market_group": [
+    null
+    ],
+    "dtitle": "第二件5元！凡士林管状润唇膏2.8g"
+    },
+    {
+    "id": 23492053,
+    "yuanjia": 35.9,
+    "jiage": 15.9,
+    "istmall": 1,
+    "xiaoliang": 126876,
+    "quanNum": 410000,
+    "quanOver": 90000,
+    "quanJine": 20,
+    "huodongType": 1,
+    "pic": "https://img.alicdn.com/imgextra/i4/1615154389/O1CN01WYyReP1iICtdc3UAd_!!1615154389.jpg",
+    "renqi": 0,
+    "salesNum": "46873",
+    "createTime": "2019-11-23 01:23:12",
+    "market_group": [
+    null
+    ],
+    "dtitle": "【韩束】抗初老提拉金刚侠面膜2片"
+    },
+    {
+    "id": 23483544,
+    "yuanjia": 69.9,
+    "jiage": 9.9,
+    "istmall": 1,
+    "xiaoliang": 113047,
+    "quanNum": 50000,
+    "quanOver": 50000,
+    "quanJine": 60,
+    "huodongType": 1,
+    "pic": "https://img.alicdn.com/imgextra/i3/2130096995/O1CN01XJbQT921Xl1LZBF3J_!!2130096995.jpg",
+    "renqi": 0,
+    "salesNum": "42592",
+    "createTime": "2019-11-23 01:23:12",
+    "market_group": [
+    null
+    ],
+    "dtitle": "大牌【仁和】草本珍珠牙粉"
+    },
+    {
+    "id": 23514886,
+    "yuanjia": 29.9,
+    "jiage": 9.9,
+    "istmall": 1,
+    "xiaoliang": 53672,
+    "quanNum": 58000,
+    "quanOver": 42000,
+    "quanJine": 20,
+    "huodongType": 1,
+    "pic": "https://img.alicdn.com/imgextra/i3/2204101371692/O1CN01bOkvd31OMyh99adik_!!2204101371692.jpg",
+    "renqi": 0,
+    "salesNum": "40913",
+    "createTime": "2019-11-23 01:23:12",
+    "market_group": [
+    null
+    ],
+    "dtitle": "新卷！Nuta无糖薄荷糖一罐22小盒"
+    },
+    {
+    "id": 23462411,
+    "yuanjia": 70.9,
+    "jiage": 20.9,
+    "istmall": 0,
+    "xiaoliang": 150000,
+    "quanNum": 40000,
+    "quanOver": 60000,
+    "quanJine": 50,
+    "huodongType": 1,
+    "pic": "https://gd2.alicdn.com/imgextra/i2/753793382/O1CN01XmZkjy1ar02yJJGPk_!!753793382.jpg",
+    "renqi": 0,
+    "salesNum": "38700",
+    "createTime": "2019-11-23 01:23:12",
+    "market_group": [
+    null
+    ],
+    "dtitle": "【卜纷】8倍洁净力洗衣凝珠*60"
+    },
+    {
+    "id": 23517324,
+    "yuanjia": 39.8,
+    "jiage": 9.8,
+    "istmall": 1,
+    "xiaoliang": 249040,
+    "quanNum": 88000,
+    "quanOver": 12000,
+    "quanJine": 30,
+    "huodongType": 2,
+    "pic": "https://img.alicdn.com/imgextra/i1/723541508/O1CN01Z7bdQS1N0hktvuI1Z_!!723541508.jpg",
+    "renqi": 0,
+    "salesNum": "38651",
+    "createTime": "2019-11-23 01:23:12",
+    "market_group": [
+    null
+    ],
+    "dtitle": "【送手册】桃胶雪燕皂角米150g"
+    },
+    {
+    "id": 23489771,
+    "yuanjia": 130.9,
+    "jiage": 40.9,
+    "istmall": 1,
+    "xiaoliang": 35363,
+    "quanNum": 77000,
+    "quanOver": 23000,
+    "quanJine": 90,
+    "huodongType": 1,
+    "pic": "https://img.alicdn.com/imgextra/i3/2400758027/O1CN01IoapSS29APn9V2ZAw_!!0-item_pic.jpg",
+    "renqi": 0,
+    "salesNum": "35239",
+    "createTime": "2019-11-23 01:23:12",
+    "market_group": [
+    null
+    ],
+    "dtitle": "【任选8件】仙蒂奈儿化妆品组合"
+    },
+    {
+    "id": 23485528,
+    "yuanjia": 26.8,
+    "jiage": 16.8,
+    "istmall": 1,
+    "xiaoliang": 105480,
+    "quanNum": 71000,
+    "quanOver": 29000,
+    "quanJine": 10,
+    "huodongType": 1,
+    "pic": "//img.alicdn.com/imgextra/i1/2831830973/O1CN01NzCziq1J3fwRE7y0G_!!2831830973.jpg",
+    "renqi": 0,
+    "salesNum": "33243",
+    "createTime": "2019-11-23 01:23:12",
+    "market_group": [
+    null
+    ],
+    "dtitle": "俞兆林男士纯棉袜10双礼盒装"
+    },
+    {
+    "id": 23494361,
+    "yuanjia": 25.1,
+    "jiage": 5.1,
+    "istmall": 1,
+    "xiaoliang": 67200,
+    "quanNum": 41000,
+    "quanOver": 59000,
+    "quanJine": 20,
+    "huodongType": 1,
+    "pic": "https://img.alicdn.com/bao/uploaded/TB17EGYUYvpK1RjSZPiXXbmwXXa.png",
+    "renqi": 0,
+    "salesNum": "29956",
+    "createTime": "2019-11-23 01:23:12",
+    "market_group": [
+    null
+    ],
+    "dtitle": "【蕲大妈去湿出寒】十年陈艾灸贴50粒"
+    },
+    {
+    "id": 23510230,
+    "yuanjia": 47.9,
+    "jiage": 7.9,
+    "istmall": 1,
+    "xiaoliang": 123791,
+    "quanNum": 64000,
+    "quanOver": 36000,
+    "quanJine": 40,
+    "huodongType": 1,
+    "pic": "https://img.alicdn.com/imgextra/i2/704619847/O1CN016NzFEh2MbybwcEnRG_!!704619847.jpg",
+    "renqi": 0,
+    "salesNum": "29395",
+    "createTime": "2019-11-23 01:23:12",
+    "market_group": [
+    null
+    ],
+    "dtitle": "【拍三件更划算】晨洁医用冷敷贴10贴"
+    },
+    {
+    "id": 23516691,
+    "yuanjia": 39.9,
+    "jiage": 24.9,
+    "istmall": 1,
+    "xiaoliang": 64159,
+    "quanNum": 96000,
+    "quanOver": 4000,
+    "quanJine": 15,
+    "huodongType": 1,
+    "pic": "https://img.alicdn.com/imgextra/i1/1882956081/O1CN010UV4z31un933yQrK5_!!1882956081.jpg",
+    "renqi": 0,
+    "salesNum": "28119",
+    "createTime": "2019-11-23 01:23:12",
+    "market_group": [
+    null
+    ],
+    "dtitle": "【3卷纯棉】珍珠螺纹卷筒式洗脸巾"
+    },
+    {
+    "id": 23489476,
+    "yuanjia": 54.9,
+    "jiage": 9.9,
+    "istmall": 1,
+    "xiaoliang": 141000,
+    "quanNum": 48000,
+    "quanOver": 52000,
+    "quanJine": 45,
+    "huodongType": 1,
+    "pic": "https://img.alicdn.com/imgextra/i3/793684887/O1CN01DNsomr1lyI8kHLkEs_!!793684887.jpg",
+    "renqi": 0,
+    "salesNum": "28072",
+    "createTime": "2019-11-23 01:23:12",
+    "market_group": [
+    null
+    ],
+    "dtitle": "【南怀瑾】正品艾脐贴30粒+30贴"
+    }
+  ]
+}

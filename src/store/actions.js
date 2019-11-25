@@ -12,7 +12,8 @@ import {
   SAVE_SHANGJIA,
   SAVE_SHANGTUIJIAN,
   SAVE_GOODS,
-  SAVE_GETNAVS
+  SAVE_GETNAVS,
+  SAVE_JINGXUAN
 } from './mutations-type';
 
 import { 
@@ -20,7 +21,8 @@ import {
   getpeachCollect,
   reqShangDian,
   getGoods,
-  getnavs
+  getnavs,
+  getby
 } from "../api";
 
 export default {
@@ -100,5 +102,15 @@ export default {
       //调用commit,将数据给mutation
       commit(SAVE_BRANDS,{brands:result.brandsData})
     }  
-  }
+  },
+  // 发请求 获取9.9包邮数据
+  async getBYAction({commit}){
+    let result = await getby()    //发请求获取到的数据
+    console.log(result)
+    if(result.code === 0){
+     //  调用commit 把数据传给mutation
+     commit(SAVE_POSTAGE,{byDatas:result.byDatas.data})     //此时返回来的bystats是个对象： 有两个数组对象；
+    }
+ }
+
 }

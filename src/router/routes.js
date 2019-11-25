@@ -49,6 +49,7 @@ export default [
         component:Home
       },
       {
+        name:'Jingxuan',
         path: '/peachpostage/jingxuan',
         component:Jingxuan
       }

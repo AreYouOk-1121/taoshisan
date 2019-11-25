@@ -1,110 +1,94 @@
 <template>
+  
+
  <div class="JXContainer">
-   <!-- 遍历 -->
-    <div>
-      <span class="title"> || 近一小时疯抢 || </span>
-      <div class="wrapper" ref="wrapperUl">
+   <!-- 遍历box  v-for="(box,index) in boxdatas" :key="index"  -->
+    <div class="box">
+      <span class="title"> || 近一小时抢购 || </span>
+      <div class="wrapper" ref="wrapperUl1">
         <ul class="content">
           <!-- items是返回的总数据 -->
-          <li class="list"  v-for="(item,index) in items" :key="index" >
+          <li class="list" v-for="(item,index) in byDatas">
             <img :src="item.pic" alt="">
             <span class="FQ">疯抢6216种</span>
-            <span class="Green">【形象美】商场同款眼霜</span>
-            <span class="Money">$ 8.9</span>
+            <span class="Green">{{item.dtitle}}</span>
+            <span class="Money">${{item.yuanjia}}</span>
           </li>
         </ul>
-        
+   
+   
       </div>
-    </div> 
-    <div>
-      <span class="title"> || 近一小时疯抢 || </span>
+      
       <div class="wrapper" ref="wrapperUl2">
         <ul class="content">
-          <!-- items是返回的总数据  v-for="(items,index) in item" :key="index"-->
-          <li class="list">
-            <img src="https://img.alicdn.com/imgextra/i1/2201195930685/O1CN01c9EkUU1Gvlrd6J7sG_!!2201195930685.jpg_310x310.jpg_.webp" alt="">
+          <li class="list" v-for="(item,index) in byDatas">
+            <img :src="item.pic" alt="">
             <span class="FQ">疯抢6216种</span>
-            <span class="Green">【形象美】商场同款眼霜</span>
-            <span class="Money">$ 8.9</span>
-          </li>
-           <li class="list">
-            <img src="https://img.alicdn.com/imgextra/i1/2201195930685/O1CN01c9EkUU1Gvlrd6J7sG_!!2201195930685.jpg_310x310.jpg_.webp" alt="">
-            <span class="FQ">疯抢6216种</span>
-            <span class="Green">【形象美】商场同款眼霜</span>
-            <span class="Money">$ 8.9</span>
-          </li>
-           <li class="list">
-            <img src="https://img.alicdn.com/imgextra/i1/2201195930685/O1CN01c9EkUU1Gvlrd6J7sG_!!2201195930685.jpg_310x310.jpg_.webp" alt="">
-            <span class="FQ">疯抢6216种</span>
-            <span class="Green">【形象美】商场同款眼霜</span>
-            <span class="Money">$ 8.9</span>
-          </li>
-           <li class="list">
-            <img src="https://img.alicdn.com/imgextra/i1/2201195930685/O1CN01c9EkUU1Gvlrd6J7sG_!!2201195930685.jpg_310x310.jpg_.webp" alt="">
-            <span class="FQ">疯抢6216种</span>
-            <span class="Green">【形象美】商场同款眼霜</span>
-            <span class="Money">$ 8.9</span>
-          </li>
-           <li class="list">
-            <img src="https://img.alicdn.com/imgextra/i1/2201195930685/O1CN01c9EkUU1Gvlrd6J7sG_!!2201195930685.jpg_310x310.jpg_.webp" alt="">
-            <span class="FQ">疯抢6216种</span>
-            <span class="Green">【形象美】商场同款眼霜</span>
-            <span class="Money">$ 8.9</span>
-          </li>
-           <li class="list">
-            <img src="https://img.alicdn.com/imgextra/i1/2201195930685/O1CN01c9EkUU1Gvlrd6J7sG_!!2201195930685.jpg_310x310.jpg_.webp" alt="">
-            <span class="FQ">疯抢6216种</span>
-            <span class="Green">【形象美】商场同款眼霜</span>
-            <span class="Money">$ 8.9</span>
+            <span class="Green">{{item.dtitle}}</span>
+            <span class="Money">${{item.yuanjia}}</span>
           </li>
         </ul>
       </div>
+      
+      <div class="wrapper" ref="wrapperUl3">
+        <ul class="content">
+          <li class="list" v-for="(item,index) in byDatas">
+            <img :src="item.pic" alt="">
+            <span class="FQ">疯抢6216种</span>
+            <span class="Green">{{item.dtitle}}</span>
+            <span class="Money">${{item.yuanjia}}</span>
+          </li>
+        </ul>
+      </div>
+
     </div> 
 </div>
+
 </template>
 
 <script type="text/ecmascript-6">
-import datas from "../../../../Peach_server/data/home.json";
 import BScroll from 'better-scroll'
+import { mapState } from "vuex"
   export default {
     name:"Jingxuan",
     data() {
       return {
-        items:[],
-       
-       
+         imageList: [
+            'https://img.yzcdn.cn/vant/apple-1.jpg',
+            'https://img.yzcdn.cn/vant/apple-2.jpg'
+         ]
       }
-    },
-    
-    
-    mounted() {
-      this.goRscroll()
-      this.goRscroll2()
-      this.items = datas.data.data
-  
-    
-     
-      
     },
     methods: {
       goRscroll(){
         this.$nextTick(()=>{
-          this.scroll = new BScroll(this.$refs.wrapperUl,{
+          this.scroll = new BScroll(this.$refs.wrapperUl1,{
             scrollX:true
-          })
-        })
-      },
-       goRscroll2(){
-        this.$nextTick(()=>{
+          }),
           this.scroll = new BScroll(this.$refs.wrapperUl2,{
             scrollX:true
+          }),
+          this.scroll = new BScroll(this.$refs.wrapperUl3,{
+            scrollX:true
           })
         })
-      },
-      
+      },  
     },
-  
+
     
+    mounted() {
+      this.goRscroll()
+   
+       this.$route.query.index
+       console.log(this)
+    },
+    computed: {
+      ...mapState({   //mapstate 是vuex的语法， 可以将返回的总数据进行解构，这样做的好处就是不能直接修改原数据；
+        // =》 后面的 bydatas 是包含两个数组的对象， 因为现在要用jxdata,所以从bydatas.jxdata 获取到jxdata 的值赋值给了bydats
+
+           byDatas: state => state.byDatas.jxdata 
+      })
+    }
   }
 </script>
 
@@ -123,14 +107,17 @@ import BScroll from 'better-scroll'
     color #FC436D
   .wrapper
     width 100%
+    height 100%
     background #ffffff
     display flex
     overflow hidden
+
     .content
       height 166px
       display flex
       flex-wrap nowrap 
       border-bottom  1px solid #ffeeff
+      
       .list
         width 110px
         height 160px
@@ -146,6 +133,7 @@ import BScroll from 'better-scroll'
           font-size 10px
           background-color #FFF3F3
           border 1px solid #ffbdbf
+          color red
         .Green
           display block
           font-size 11px 
@@ -153,6 +141,7 @@ import BScroll from 'better-scroll'
           white-space nowrap
           overflow hidden
           text-overflow ellipsis
+          font-weight 400
         .Money
           width 100px
           font-size 14px
