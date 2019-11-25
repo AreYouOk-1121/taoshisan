@@ -1,7 +1,7 @@
 <template>
   <div class='baseContainer'>
     <router-view />
-    <PeachFooter/>
+    <PeachFooter v-if="$route.meta.isShowFooterGuide"/>
   </div>
 </template>
 

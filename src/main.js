@@ -27,6 +27,15 @@ Vue.use(Tab).use(Tabs);
 Vue.use(Row).use(Col)
 
 
+
+
+
+
+
+
+
+
+
 Vue.config.productionTip = false
 
 

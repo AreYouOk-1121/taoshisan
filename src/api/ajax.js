@@ -16,7 +16,8 @@ instance.interceptors.request.use((config)=>{
 //响应拦截器拦截器
 instance.interceptors.response.use(
   /* 成功 */
-  response => response.data,
+  response =>  response.data,
+
   /* 失败 */
   error=>{
     if(error.response.status===404){

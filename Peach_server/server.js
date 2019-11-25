@@ -13,6 +13,7 @@ const app = express()
 
 const http = require('http')
 const server = http.createServer(app)
+
 let {Router} = require('express')
 
 // 声明使用静态中间件
@@ -37,6 +38,8 @@ const indexRouter = require('./routers')
 app.use('/', indexRouter)
 
 app.get('/test', function (req, res) {
+  console.log(req.query)
+  console.log('chenggong')
   res.send({
     code: 0,
     data: 'hello vue test!'
@@ -44,24 +47,9 @@ app.get('/test', function (req, res) {
 })
 
 // 在路由器中间之后, 处理所有与路由器中间的路由不匹配的请求
-/*app.use((req, res) => {
-  console.log('--------')
-  fs.readFile(__dirname + '/public/index.html', (err, data)=>{
-    if(err){
-      console.log(err)
-      res.send('后台错误')
-    } else {
-      res.writeHead(200, {
-        'Content-type': 'text/html',
-        'Connection':'keep-alive'
-      })
-      res.end(data)
-    }
-  })
-})*/
 const router = new Router()
 // 安装路由器
-router.get('/peachhome',function (req, res) {
+app.get('/peachhome',function (req, res) {
   // res.send('111')
   const data = require('../data/classification.json')
   // const data = require('./data/classification.json')
@@ -75,18 +63,27 @@ router.get('/peachhome',function (req, res) {
 
 /* 更多详情路由 */
 
-router.get('/brands',function (req, res) {
+app.get('/brands',function (req, res) {
   const brandsData = require('./data/brandsData.json')
   res.send({
       code: 0,
       brandsData
+  })
+})
+//一级路由
+app.get('/Peachclassify',function (req, res) {
+  const data = require('./data/classification.json')
+  console.log(data)
+  res.send({
+    code: 0,
+    data
   })
   
 })
 
 /* 商家详情 */
 const goodsData = require('./data/goodsData.json')
-router.get('/goods',function (req, res) {
+app.get('/goods',function (req, res) {
   res.send({
       code: 0,
       goodsData
@@ -96,7 +93,7 @@ router.get('/goods',function (req, res) {
 
 /* 获取导航详情 */
 const navigationData = require('./data/NavData.json')
-router.get('/navs',function (req, res) {
+app.get('/navs',function (req, res) {
   res.send({
       code: 0,
       navigationData
@@ -115,7 +112,7 @@ router.get('/Peachpostage',function (req, res) {
   })
 })
 
-router.get('/peachcollect',function (req,res) {
+app.get('/peachcollect',function (req,res) {
   // const data = require('xxx')
   res.send({
     code: 0,
@@ -124,9 +121,9 @@ router.get('/peachcollect',function (req,res) {
 })
 
 // 详情信息
-
-router.get('/peachdetails',function (req,res) {
+app.get('/peachdetails', function (req, res) {
   let {shangData} = req.query
+  let data = {}
   switch (shangData) {
     case 'shangdian':
       data = require('./data/shangdian.json')
@@ -141,12 +138,14 @@ router.get('/peachdetails',function (req,res) {
       data = require('./data/tuijiayi.json')
       break;
   }
-  console.log(req.query)
-  // console.log(data)
-  res.send(data)
+  console.log('chenggong')
+  res.send({
+    code: 0,
+    data
+  })
 })
 
-router.get('/peachlogin',function (req,res) {
+app.get('/peachlogin',function (req,res) {
   // const data = require('xxx')
   res.send({
     code: 0,
@@ -163,7 +162,7 @@ router.get('/brands',function (req, res) {
   })
 })
 
-app.use(router)
+/* app.use(router)
 app.listen('5000',function (err) { 
   if (!err) {
     console.log('服务器启动成功了')
@@ -171,11 +170,11 @@ app.listen('5000',function (err) {
   } else {
     console.log(err)
   }
-})
+}) */
 
-
+app.use(router)
 // 通过mongoose连接数据库
-/* mongoose.connect('mongodb://localhost/Peachhome', {useNewUrlParser: true})
+mongoose.connect('mongodb://localhost/Peachhome', {useNewUrlParser: true})
   .then(() => {
     console.log('连接数据库成功!!!')
     // 只有当连接上数据库后才去启动服务器
@@ -185,5 +184,6 @@ app.listen('5000',function (err) {
   })
   .catch(error => {
     console.error('连接数据库失败', error)
-  }) */
+  })
 
+  

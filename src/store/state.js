@@ -8,5 +8,8 @@ export default {
   shangDian:[], // 详情商店
   shangJia:{}, // 商家信息
   tuiJia:[], // 商家信息
-  byDatas:{} //9.9包邮初始化数据   里面有多个数组，
+  byDatas:{} ,//9.9包邮初始化数据   里面有多个数组，
+  classify: [],
+  user: [],//用户数据
+  token:[]
 }

@@ -2,7 +2,7 @@
   <div id="wn-PeachCollect">
     <div class="CollectTitle">
       <div @click="goHome('/peachlogin')"><</div>
-      <span>我的收藏</span>
+      <span @click="gohan">我的收藏</span>
       <div @click="isShowComelete = !isShowComelete">{{isShowComelete?'完成':'编辑'}}</div>
     </div>
     <div class="CollectCourrent" ref="ShouCang">
@@ -48,6 +48,7 @@
     mounted() {
       this.$store.dispatch('getShangDian')
       this.$store.dispatch('getTuiJia')
+
     },
     data() {
       return {
@@ -55,6 +56,12 @@
       }
     },
     methods: {
+      async gohan(){
+        // this.$store.dispatch('getShangDian')
+        let results =  await this.$API.reqShangDian("shangdian")
+        // let results =  await this.$API.reqTest()
+        console.log(results)
+      },
       goHome(path){
         this.$route.path !== path && this.$router.replace(path)
       }
@@ -74,7 +81,7 @@
 <style lang="stylus" rel="stylesheet/stylus" scoped>
   #wn-PeachCollect
     width 100%
-    height 1000px
+    height 100%
     background-color #eee
     .deleteCollect
       &.delete-enter-active,&.delete-leave-active

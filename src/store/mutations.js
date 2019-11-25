@@ -1,5 +1,12 @@
 
 import {
+  SAVE_SHANGDIAN,
+  SAVE_SHANGJIA,
+  SAVE_SHANGTUIJIAN,
+  SAVE_GOODS,
+  SAVE_GESHOPCOLLECTS, 
+  SAVE_GETNAVS,
+  SAVE_SHOPCOLLECT,
   SAVE_ADDRESS,
   SAVE_CLASSIFY,
   SAVE_COLLECT,
@@ -8,13 +15,8 @@ import {
   SAVE_PERSONAL,
   SAVE_POSTAGE,
   SAVE_BRANDS,
-  SAVE_SHANGDIAN,
-  SAVE_SHANGJIA,
-  SAVE_SHANGTUIJIAN,
-  SAVE_GOODS,
-  SAVE_GESHOPCOLLECTS, 
-  SAVE_GETNAVS,
-  SAVE_SHOPCOLLECT
+  SAVE_USER,
+  SAVE_TOKEN
 } from './mutations-type'
 
 export default {
@@ -32,9 +34,7 @@ export default {
   [SAVE_GESHOPCOLLECTS](state,{ShopCollects}){
     state.ShopCollects = ShopCollects
   },
-  [SAVE_COLLECT](state,{
-    collect
-  }) {
+  [SAVE_COLLECT](state,{ collect}) {
     state.collect = collect
   },
   [SAVE_BRANDS](state,{brands}){
@@ -52,5 +52,26 @@ export default {
    // mutations 是个对象，直接更新状态数据的对象：参数1 state ,参数2 要传的数据(也就是初始话数据)/ 传多个数据的对象
    [SAVE_POSTAGE](state,{ byDatas}){
     state.byDatas = byDatas
+  },
+
+  [SAVE_CLASSIFY](state,{
+    classify
+  }) {
+    state.classify = classify
+  },
+
+  [SAVE_USER](state, {
+    user
+  }) {
+    state.user = user
+  },
+  [SAVE_TOKEN](state, {
+    token
+  }) {
+    
+    localStorage.setItem('token_key', token)
+    state.token = token
   }
 }
+
+

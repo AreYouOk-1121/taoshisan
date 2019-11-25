@@ -85,9 +85,9 @@
     },
     mounted() {
        console.log(this.$route.query.id);//接受id值,要显示对应id的对象数据
-      this.$store.dispatch('getShangDian')
-      this.$store.dispatch('getShangJia')
-      this.$store.dispatch('getTuiJia')
+      // this.$store.dispatch('getShangDian')
+      // this.$store.dispatch('getShangJia')
+      // this.$store.dispatch('getTuiJia')
 
 
     },

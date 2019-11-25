@@ -13,6 +13,8 @@ export const SAVE_SHANGJIA = 'save_shangjia'  //更多商品数据
 export const SAVE_SHANGTUIJIAN = 'save_shangtuijian'  //更多商品数据
 
 
+export const SAVE_USER = 'save_user'
+export const SAVE_TOKEN = 'save_token'
 
   
 

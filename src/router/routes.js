@@ -14,35 +14,50 @@ import Home from "../pages/PeachPostage/Home/Home.vue";
 import Jingxuan from "../pages/PeachPostage/Jingxuan/Jingxuan.vue";
 import SubClass from '../pages/PeachClassify/SubClass/SubClass.vue'
 import CassNavyRight from '../pages/PeachClassify/CassNavyRight/CassNavyRight.vue'
+import Rushtobuy from '../pages/Rushtobuy/Rushtobuy.vue'
 
 export default [
   {
     path:'/peachclassify',
-    component:PeachClassify,
-    children:[{
-      path:'peachclassify/cassnavyright',
-      component:CassNavyRight
-    }]
-  }, 
-  // {
-  //   path:'/subclass',
-  //   component:SubClass
-  // },
+    component: PeachClassify,
+    meta: { // 传多个键值对，隐式传参，缺点： 不能动态传参
+      isShowFooterGuide: true
+  }
+  },
+  {
+    path:'/peachcollect',
+    component:PeachCollect,
+    meta: { // 传多个键值对，隐式传参，缺点： 不能动态传参
+      isShowFooterGuide: true
+  }
+  },
   {
     path:'/peachhome',
-    component:PeachHome
+    component: PeachHome,
+    meta: { // 传多个键值对，隐式传参，缺点： 不能动态传参
+      isShowFooterGuide: true
+  }
+   
   },
   {
     path:'/peachlogin',
-    component:PeachLogin
+    component: PeachLogin,
+   
   },
   {
     path:'/peachpersonal',
-    component:PeachPersonal
+    component: PeachPersonal,
+    meta: { // 传多个键值对，隐式传参，缺点： 不能动态传参
+      isShowFooterGuide: true
+  }
+   
   },
   {
     path:'/peachpostage',
-    component:PeachPostage,
+    component: PeachPostage,
+    meta: { // 传多个键值对，隐式传参，缺点： 不能动态传参
+      isShowFooterGuide: true
+  },
     children: [
       {
         path: '/peachpostage/home',
@@ -67,6 +82,15 @@ export default [
   {
     path:'/homemorebrand',
     component:HomeMoreBrand
+  },
+  {
+    path:'/peachdetails',
+    component:PeachDetails
+  },
+  {
+    path: '/Rushtobuy',
+    component:Rushtobuy
+
   },
   {
     path:'/',

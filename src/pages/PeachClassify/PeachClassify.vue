@@ -13,9 +13,15 @@
         </div>
         <div class="scrollbar">
           <div ref="scroller" class="scrollbar-bswrapper">
+<<<<<<< HEAD
             <ul ref="navUl" class="scrollbar-list">
               <li @click="getNavIndex(index)" v-for="(item,index) in ClassImgs" :key="index" class="scrollbar-list-item" :class="{active:navIndex===index}">
                 {{item.categoryClassName}}
+=======
+            <ul @click="on" class="scrollbar-list">
+              <li  v-for="(item,index) in classify.categoryClass" :key="index" class="scrollbar-list-item active">
+                {{item.name}}
+>>>>>>> origin/weichuan
               </li>
               <div class="blank-bottom"></div>
             </ul>
@@ -41,9 +47,13 @@
     </div>
     
   </div>
+  
 </template>
 
 <script type="text/ecmascript-6">
+   import {getpeachClassify}from '../../api'
+   import {mapState} from 'vuex'
+  
   // 分类
   import BScroll from '@better-scroll/core'
   import ScrollBar from '@better-scroll/scroll-bar'
