@@ -12,7 +12,7 @@ import HomeShops from "../pages/homeShops/homeShops.vue";
 import HomeMoreBrand from "../pages/HomeMoreBrand/HomeMoreBrand.vue";
 import Home from "../pages/PeachPostage/Home/Home.vue";
 import Jingxuan from "../pages/PeachPostage/Jingxuan/Jingxuan.vue";
-import Rushtobuy from '../pages/Rushtobuy/Rushtobuy.vue'
+import Reshtobuy from '../pages/Rushtobuy/Rushtobuy.vue'
 
 export default [
   {
@@ -52,10 +52,7 @@ export default [
   },
   {
     path:'/peachpostage',
-    component: PeachPostage,
-    meta: { // 传多个键值对，隐式传参，缺点： 不能动态传参
-      isShowFooterGuide: true
-  },
+    component:PeachPostage,
     children: [
       {
         path: '/peachpostage/home',
@@ -73,7 +70,7 @@ export default [
     component:PeachDetails
   },
   {
-    path:'/HomeShops',
+    path:'/homeshops',
     component:HomeShops
   },
   {
@@ -85,10 +82,10 @@ export default [
     component:PeachDetails
   },
   {
-    path: '/Rushtobuy',
-    component:Rushtobuy
-
+    path:'/peachreshtobuy',
+    component:Reshtobuy
   },
+
   {
     path:'/',
     redirect:'/peachhome'

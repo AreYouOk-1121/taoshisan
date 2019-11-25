@@ -4,7 +4,7 @@
      <div class="top">
     <img src="https://cmsstatic.ffquan.cn//wap_new/user/images/integral/user.png?v=201908292038" alt="">
     <span @click="$router.push('/Peachlogin')" v-if="!user.phone">{{user.name ? user.name : '请登录'}}</span>
-    <i @click="$router.push('/Rushtobuy')" class="iconfont iconshezhi"></i>
+    <i @click="$router.push('/peachreshtobuy')" class="iconfont iconshezhi"></i>
       </div>
    
 

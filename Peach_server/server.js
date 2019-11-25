@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+let Koa = require('koa')
+let KoaRouter = require('koa')
+=======
+>>>>>>> origin/master
 let express = require('express')
 let {Router} = require('express')
 let app = express()
@@ -81,3 +88,7 @@ if (!err) {
 }
 
 })
+<<<<<<< HEAD
+=======
+>>>>>>> wangnan
+>>>>>>> origin/master
