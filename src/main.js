@@ -3,6 +3,7 @@ import { Navbar, TabItem } from 'mint-ui'
 import { TabContainer, TabContainerItem } from 'mint-ui'
 import { Cell } from 'mint-ui'
 import { InfiniteScroll } from 'mint-ui';
+import Router from 'vue-router'
 
 import 'mint-ui/lib/style.css'
 
@@ -69,6 +70,10 @@ new Vue({
 
 
 
+const originalPush = Router.prototype.push
+Router.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
 
 
 

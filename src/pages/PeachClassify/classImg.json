@@ -1,5 +1,6 @@
 [
     {   
+        "id":0,
         "categoryClassName":"为你推荐",
         "categoryClassData":[
             {
@@ -63,6 +64,7 @@
         ]
     },
     {
+        "id":1,
         "categoryClassName":"品牌精选",
         "categoryClassData":[
             {
@@ -154,6 +156,7 @@
         ]
     },
     {
+        "id":2,
         "categoryClassName":"女装",
         "categoryClassData":[
             {
@@ -177,6 +180,7 @@
         ]
     },
     {
+        "id":3,
         "categoryClassName":"男装",
         "categoryClassData":[
             {
@@ -200,6 +204,7 @@
         ]
     },
     {
+        "id":4,
         "categoryClassName":"美食",
         "categoryClassData":[
             {
@@ -232,6 +237,7 @@
         ]
     },
     {
+        "id":5,
         "categoryClassName":"美妆",
         "categoryClassData":[
             {
@@ -264,6 +270,7 @@
         ]
     },
     {
+        "id":6,
         "categoryClassName":"居家日用",
         "categoryClassData":[
             {
@@ -296,6 +303,7 @@
         ]
     },
     {
+        "id":7,
         "categoryClassName":"鞋品",
         "categoryClassData":[
             {
@@ -319,6 +327,7 @@
         ]
     },
     {
+        "id":8,
         "categoryClassName":"数码家电",
         "categoryClassData":[
             {
@@ -351,6 +360,7 @@
         ]
     },
     {
+        "id":9,
         "categoryClassName":"文娱车品",
         "categoryClassData":[
             {
@@ -374,6 +384,7 @@
         ]
     },
     {
+        "id":10,
         "categoryClassName":"内衣",
         "categoryClassData":[
             {
@@ -397,6 +408,7 @@
         ]
     },
     {
+        "id":11,
         "categoryClassName":"母婴",
         "categoryClassData":[
             {
@@ -429,6 +441,7 @@
         ]
     },
     {
+        "id":12,
         "categoryClassName":"箱包",
         "categoryClassData":[
             {
@@ -461,6 +474,7 @@
         ]
     },
     {
+        "id":13,
         "categoryClassName":"配饰",
         "categoryClassData":[
             {
@@ -493,6 +507,7 @@
         ]
     },
     {
+        "id":14,
         "categoryClassName":"家装家纺",
         "categoryClassData":[
             {
@@ -516,6 +531,7 @@
         ]
     },
     {
+        "id":15,
         "categoryClassName":"户外运动",
         "categoryClassData":[
             {

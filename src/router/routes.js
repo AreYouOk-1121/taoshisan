@@ -12,24 +12,39 @@ import HomeShops from "../pages/homeShops/homeShops.vue";
 import HomeMoreBrand from "../pages/HomeMoreBrand/HomeMoreBrand.vue";
 import Home from "../pages/PeachPostage/Home/Home.vue";
 import Jingxuan from "../pages/PeachPostage/Jingxuan/Jingxuan.vue";
-import SubClass from '../pages/PeachClassify/SubClass/SubClass.vue'
-import CassNavyRight from '../pages/PeachClassify/CassNavyRight/CassNavyRight.vue'
 import Rushtobuy from '../pages/Rushtobuy/Rushtobuy.vue'
+import ClassDetail from '../pages/PeachClassify/ClassDetail.vue';
 
 export default [
   {
     path:'/peachclassify',
-    component: PeachClassify,
+    component:PeachClassify,
     meta: { // 传多个键值对，隐式传参，缺点： 不能动态传参
       isShowFooterGuide: true
-  }
-  },
+    },
+    children:[
+      {
+        name:'detail',
+        path:'/peachclassify/detial/:id',
+        component:PeachClassify,
+      }
+    ]
+  }, 
+    
   {
     path:'/peachcollect',
     component:PeachCollect,
     meta: { // 传多个键值对，隐式传参，缺点： 不能动态传参
       isShowFooterGuide: true
-  }
+    }
+  },
+  {
+    path:'/classdetail',
+    component:ClassDetail
+  },
+  {
+    path:'/peachcollect',
+    component:PeachCollect
   },
   {
     path:'/peachhome',

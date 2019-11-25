@@ -13,15 +13,14 @@
         </div>
         <div class="scrollbar">
           <div ref="scroller" class="scrollbar-bswrapper">
-<<<<<<< HEAD
-            <ul ref="navUl" class="scrollbar-list">
-              <li @click="getNavIndex(index)" v-for="(item,index) in ClassImgs" :key="index" class="scrollbar-list-item" :class="{active:navIndex===index}">
-                {{item.categoryClassName}}
-=======
             <ul @click="on" class="scrollbar-list">
               <li  v-for="(item,index) in classify.categoryClass" :key="index" class="scrollbar-list-item active">
                 {{item.name}}
->>>>>>> origin/weichuan
+              <li @click="getNavIndex(index,item.id)" v-for="(item,index) in ClassImgs" :key="item.id" class="scrollbar-list-item" :class="{active:navIndex===index}">
+              
+                <router-link :to="{name:'detail',params:{id:item.id}}">{{item.categoryClassName}}</router-link>
+
+
               </li>
               <div class="blank-bottom"></div>
             </ul>
@@ -36,19 +35,35 @@
             <ul class="scrollbar-list">
 
               <li  class="scrollbar-list-item" style="height:100px">
-                 <SubClass/>
+                <div class="brandClass">
+                  <div v-for="(item,index) in ClassImgs[navIndex].categoryClassData" :key="index">
+                    <h4>{{item.subclassName}}</h4>
+                    <ul class="ul">
+                      <li
+                      @click="$router.push('/classdetail')"
+                        v-for="(dataLi, index) in item.subclassData"
+                        :key="index"
+                        class="brandClassItem"
+                        style="height:100px"
+                      >
+                        <img :src="dataLi.categoryItemData" alt />
+                        <p class="brandName">{{dataLi.categoryItemName}}</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </li>
 
               <div class="blank-bottom"></div>
             </ul>
           </div>
         </div>
+            <router-view></router-view>
       </div>
     </div>
-    
+
   </div>
-  
-</template>
+</template> 
 
 <script type="text/ecmascript-6">
    import {getpeachClassify}from '../../api'
@@ -57,9 +72,8 @@
   // 分类
   import BScroll from '@better-scroll/core'
   import ScrollBar from '@better-scroll/scroll-bar'
-  import router from 'vue-router'
+  import router from 'vue-router' 
   import ClassImgs from './classImg.json'
-  import SubClass from './SubClass/SubClass'
   import MouseWheel from '@better-scroll/mouse-wheel'   //11
 
   BScroll.use(ScrollBar)
@@ -72,22 +86,16 @@
     data(){
       return {
         ClassImgs:{},     
-        navIndex:0
+        navIndex:1
       }
     },                                        
-    components: {
-      SubClass
-    },
     created() {
       this.bscroll = null
       this.bscrollRight = null
       this.ClassImgs = ClassImgs
-
     },
     mounted() {
       this.initBscroll()
-      // ,
-      // this.getNavUl()
     },
     methods: {
       initBscroll() {
@@ -124,18 +132,15 @@
               }
         })
       },
-      getNavIndex(index){
+      getNavIndex(index,id){
         let navIndex = index
         this.navIndex = navIndex
         console.log(navIndex)
-        // this.$router.push({name:'subclass',params:{index}})
+        this.$router.push({name:'detail',params:{id}})
+        // console.log(this.$router.push({name:'subclass',params:{index}}))
       }
     }
   }     
-
-
-
-
 
 
 </script>
@@ -250,6 +255,49 @@
             //       width 61px
             //       height 61px
             //       padding-left 20px
+
+            .brandClass 
+              display: flex;
+              flex-direction column
+              flex-wrap: wrap;
+              width: 306px;
+              h4 
+                height 46px
+                line-height 46px
+                padding-left 20px
+                font-size 14px
+                color #333
+              ul
+                display flex
+                flex-wrap: wrap;
+
+                .brandClassItem {
+                  display: flex;
+                  flex-direction: column;
+                  width: 101px;
+                  height: 106px;
+                  text-align: center;
+                  padding  0 0 20px
+                }
+                img {
+                  width: 61px;
+                  height: 61px;
+                  padding-left: 20px;
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             .brandStyle
               height 40px
               line-height 40px
