@@ -4,7 +4,7 @@
       相似推荐
     </div>
     <!-- 推荐组件 -->
-    <div class="RecommendMerchant">
+    <div class="RecommendMerchant" ref="tuijian">
       <ul>
         <li v-for="(tuijian, index) in shangTuijian" :key="index">
           <img :src="tuijian.pic" alt="tu">
@@ -20,6 +20,7 @@
 </template>
 
 <script type="text/ecmascript-6">
+  import BScroll from 'better-scroll'
   export default {
     name:"TuiJian",
     props:{
@@ -27,7 +28,16 @@
         type:Array,
         required:true
       }
-    }
+    },
+    watch: {
+      shangTuijian(){
+        this.$nextTick(()=>{
+          this.tuijian = new BScroll(this.$refs.tuijian,{
+            scrollX:true
+          })
+        })
+      }
+    },
   }
 </script>
 
@@ -35,8 +45,8 @@
 .DeatailRecommend
   overflow hidden
   background-color #fff
-  height 240px
   width 100%
+  height 240px
   .RecommendTitle
     height 50px
     line-height 50px
@@ -44,10 +54,12 @@
     font-size 18px
     color #333
   .RecommendMerchant
-    padding-left 10px
+    width 100%
+    display flex
+    margin-left 10px
     ul
       display flex
-      flex-wrap nowrap
+      padding-right 10px
       li
         margin-right 10px
         img

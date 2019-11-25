@@ -10,20 +10,7 @@
     <!-- 滑动 -->
     <div class="wrapper">
       <ul class="content">
-        <li><a href="javascript:;">精品</a></li>
-        <li><a href="javascript:;">精品</a></li>
-        <li><a href="javascript:;">精品</a></li>
-        <li><a href="javascript:;">精品</a></li>
-        <li><a href="javascript:;">精品</a></li>
-        <li><a href="javascript:;">精品</a></li>
-        <li><a href="javascript:;">精品</a></li>
-        <li><a href="javascript:;">精品</a></li>
-        <li><a href="javascript:;">精品</a></li>
-        <li><a href="javascript:;">精品</a></li>
-        <li><a href="javascript:;">精品</a></li>
-        <li><a href="javascript:;">精品</a></li>
-        <li><a href="javascript:;">精品</a></li>
-        <li><a href="javascript:;">精品</a></li>
+        <li v-for="(brand,index) in brandsData" :key="index"><a href="javascript:;">精品</a></li>
       </ul>
     </div>
     <div class="tuijian">
@@ -57,7 +44,7 @@
           <li class="shopItemDetails" v-for="(brand,index) in brands" :key="index">
             <div class="DetailsItem">
               <div class="ItemImg">
-                <img :src="brand.image" alt="" class="shopImg">
+                <img :src="brand.image" alt="" class="shopImg" @click="goDetails">
                 <div class="shopDiscount">{{brand.discount}}折</div>
               </div>
               <!-- 价格上部 -->
@@ -101,6 +88,9 @@ import { mapState } from "vuex";
     methods:{
       goPeachHome(){
         this.$router.back()
+      },
+      goDetails(){
+        this.$router.push('/peachdetails')
       }
       
     },

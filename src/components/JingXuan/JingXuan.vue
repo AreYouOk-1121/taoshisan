@@ -7,7 +7,7 @@
       </div>
     </div>
     <ul class="CollectOmnibus">
-      <li class="CollectOmnibusItem" v-for="(item, index) in jingXuanBiao" :key="index">
+      <li @click="goDeatail(index)" class="CollectOmnibusItem" v-for="(item, index) in jingXuanBiao" :key="index">
         <img :src="item.pic" alt="tu"/>
         <div class="tradeName">{{item.dtitle}}</div>
         <div>劵后￥{{item.jiage}}</div>
@@ -28,6 +28,11 @@
       jingXuanBiao:{
         type:Array,
         required:true
+      }
+    },
+    methods: {
+      goDeatail(index){
+        console.log(index)
       }
     },
   }
