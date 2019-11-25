@@ -2,7 +2,7 @@
   <div class="brandStore">
     <div class="backwardsWithminiNav">
       <div class="classHeader">
-        <span @click="$router.push('/PeachClassify')" class="backwards"> < </span>
+        <span @click="$router.push('/peachclassify')" class="backwards"> < </span>
         <span class="miniNav">...</span>
       </div>
     </div>
