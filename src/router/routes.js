@@ -7,6 +7,9 @@ import PeachHome from '../pages/PeachHome/PeachHome.vue';
 import PeachLogin from '../pages/PeachLogin/PeachLogin.vue';
 import PeachPersonal from '../pages/PeachPersonal/PeachPersonal.vue';
 import PeachPostage from '../pages/PeachPostage/PeachPostage.vue';
+import PeachDetails from '../pages/PeachDetails/PeachDetails.vue';
+import HomeShops from "../pages/homeShops/homeShops.vue";
+import HomeMoreBrand from "../pages/HomeMoreBrand/HomeMoreBrand.vue";
 import Home from "../pages/PeachPostage/Home/Home.vue";
 import Jingxuan from "../pages/PeachPostage/Jingxuan/Jingxuan.vue";
 
@@ -33,7 +36,6 @@ export default [
   },
   {
     path:'/peachpostage',
-<<<<<<< HEAD
     component:PeachPostage,
     children: [
       {
@@ -41,15 +43,34 @@ export default [
         component:Home
       },
       {
+        name:'Jingxuan',
         path: '/peachpostage/jingxuan',
         component:Jingxuan
       }
     ]
-=======
-    component:PeachPostage
->>>>>>> master
+
+    
+
+
+
   },
 
+  {
+    path:'/peachdetails',
+    component:PeachDetails
+  },
+  {
+    path:'/homeshops',
+    component:HomeShops
+  },
+  {
+    path:'/homemorebrand',
+    component:HomeMoreBrand
+  },
+  {
+    path:'/peachdetails',
+    component:PeachDetails
+  },
   {
     path:'/',
     redirect:'/peachhome'

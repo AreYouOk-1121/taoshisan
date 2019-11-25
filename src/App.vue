@@ -14,6 +14,7 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
-.baseContainer
-  height 100%
+  .baseContainer
+    width 100%
+    height 100%
 </style>

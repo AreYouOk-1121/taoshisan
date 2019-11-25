@@ -72,15 +72,21 @@
           <div class="line"></div>
         </div>
          <!--切换区：home / JIngxuan   -->
-        <van-tabs v-model="activeName" sticky color="#FC3F78">
-          <van-tab    title="精选" name="a"><Jingxuan></Jingxuan><Home></Home><Home></Home> </van-tab>
+        <van-tabs v-model="activeName" sticky type="line">
+          <van-tab title="精选" name="a"><Jingxuan></Jingxuan><Home></Home></van-tab>
           <van-tab title="家具" name="b">家具<Home></Home><Home></Home><Home></Home></van-tab>
-          <van-tab title="美食" name="c">美食<Home></Home><Home></Home><Home></Home></van-tab>
-          <van-tab title="配饰" name="b">配饰<Home></Home><Home></Home><Home></Home></van-tab>
           <van-tab title="美妆" name="c">美妆<Home></Home><Home></Home><Home></Home></van-tab>
+           <van-tab title="美食" name="d">美食<Home></Home><Home></Home><Home></Home></van-tab> 
         </van-tabs>
-
-    
+  
+  
+        <!-- <van-tabs>
+          <van-tab v-for="index in 8"  :title="'标签 ' + index">
+          <router-link :to="{path:'/peachpostage/jingxuan', query:{index:1}}"></router-link>
+          </van-tab>
+          <router-view></router-view>
+        </van-tabs>  -->
+  
  
       </div>
   </div>
@@ -92,32 +98,24 @@
 <script type="text/ecmascript-6">
 import Home from "./Home/Home"
 import Jingxuan from "./Jingxuan/Jingxuan"
-import Vue from 'vue';
+import Vue from 'vue'
 import BScroll from 'better-scroll'
-import {  } from "../../api/index";
-
+import { mapState } from "vuex";
   export default {
     name:"PeachPostage",
+    components:{
+      Home,
+      Jingxuan
+    },
+    
     data() {
     return {
       activeName: 'a',
       
     };
   },
-
-    components:{
-      Home,
-      Jingxuan
-    },
-      
-    // 页面挂载时调用滑动方法
-   mounted() {
-     this.$nextTick(()=>{
-      this.goScroll()
-     }) 
-   },
-   
-// 定义内容区滑动方法
+    
+    // 定义内容区滑动方法
     methods: {
       goScroll(){
         this.$nextTick(()=>{
@@ -131,8 +129,42 @@ import {  } from "../../api/index";
       GoPeachHome(){
         this.$router.replace('/peachhome')
       },
-    
+    // 点击标签跳转
+    //  onClick(e){
+    //    this.$router.push({
+    //      name:'Jingxuan',
+    //      params:{
+    //        id:e.target.index
+    //      }
+    //    })
+    //  }
+
+     
+
+
+
     },
+
+
+    // 页面挂载时调用滑动方法
+   mounted() {
+     this.$nextTick(()=>{
+      this.goScroll()
+     }),
+    // 更新包邮整个组件的数据
+     this.$store.dispatch('getBYAction')   //请求回来的数据
+     console.log(this)
+   },
+   
+  //  
+  computed: {
+    ...mapState({
+      // 把返回的数据返回给bydatas
+        byDatas: state => state.byDatas  //  现在的bydats 是个对象： 有两个数组的对象：homedate  / jxdata  
+      })
+  
+  },
+
     
   }
 </script>
