@@ -1,9 +1,10 @@
 <template>
   <div class="brandClass">
-    <div v-for="(item,index) in ClassImgs[index1].categoryClassData" :key="index">
+    <div v-for="(item,index) in ClassImgs[navIndex].categoryClassData" :key="index">
       <h4>{{item.subclassName}}</h4>
       <ul class="ul">
         <li
+        @click="$router.push('/CassNavyRight')"
           v-for="(dataLi, index) in item.subclassData"
           :key="index"
           class="brandClassItem"
@@ -18,8 +19,7 @@
 </template>
 
 <script type="text/ecmascript-6">
-// import ClassImgs from "../classImgs.json";
-import ClassImgs from '../datas/classImg初代.json'
+import ClassImgs from '../classImg.json'
 
 export default {
   name: "SubClass",
@@ -30,7 +30,7 @@ export default {
   },
   created() {
     this.ClassImgs = ClassImgs;
-    this.index1=1
+    this.navIndex = 0 
   }
 };
 </script>
@@ -45,6 +45,9 @@ export default {
   h4 
     height 46px
     line-height 46px
+    padding-left 20px
+    font-size 14px
+    color #333
   ul
     display flex
     flex-wrap: wrap;

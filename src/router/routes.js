@@ -8,16 +8,22 @@ import PeachLogin from '../pages/PeachLogin/PeachLogin.vue';
 import PeachPersonal from '../pages/PeachPersonal/PeachPersonal.vue';
 import PeachPostage from '../pages/PeachPostage/PeachPostage.vue';
 import PeachDetails from '../pages/PeachDetails/PeachDetails.vue';
+import SubClass from '../pages/PeachClassify/SubClass/SubClass.vue'
+import CassNavyRight from '../pages/PeachClassify/CassNavyRight/CassNavyRight.vue'
 
 export default [
   {
     path:'/peachclassify',
-    component:PeachClassify
-  },
-  {
-    path:'/peachcollect',
-    component:PeachCollect
-  },
+    component:PeachClassify,
+    children:[{
+      path:'peachclassify/cassnavyright',
+      component:CassNavyRight
+    }]
+  }, 
+  // {
+  //   path:'/subclass',
+  //   component:SubClass
+  // },
   {
     path:'/peachhome',
     component:PeachHome
