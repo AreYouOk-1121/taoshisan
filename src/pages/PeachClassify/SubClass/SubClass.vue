@@ -4,7 +4,7 @@
       <h4>{{item.subclassName}}</h4>
       <ul class="ul">
         <li
-        @click="$router.push('/CassNavyRight')"
+        @click="$router.push('/classdetail')"
           v-for="(dataLi, index) in item.subclassData"
           :key="index"
           class="brandClassItem"
