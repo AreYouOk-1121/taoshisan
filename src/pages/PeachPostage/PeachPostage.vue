@@ -72,12 +72,12 @@
           <div class="line"></div>
         </div>
          <!--切换区：home / JIngxuan   -->
-        <van-tabs v-model="activeName" >
-          <van-tab title="精选" name="a"><Jingxuan></Jingxuan><Home></Home><Home></Home> </van-tab>
-          <van-tab title="家具" name="b"><Home></Home><Home></Home><Home></Home></van-tab>
-          <van-tab title="美食" name="c"><Home></Home><Home></Home><Home></Home></van-tab>
-          <van-tab title="家具" name="b"><Home></Home><Home></Home><Home></Home></van-tab>
-          <van-tab title="美妆" name="c"><Home></Home><Home></Home><Home></Home></van-tab>
+        <van-tabs v-model="activeName" sticky color="#FC3F78">
+          <van-tab    title="精选" name="a"><Jingxuan></Jingxuan><Home></Home><Home></Home> </van-tab>
+          <van-tab title="家具" name="b">家具<Home></Home><Home></Home><Home></Home></van-tab>
+          <van-tab title="美食" name="c">美食<Home></Home><Home></Home><Home></Home></van-tab>
+          <van-tab title="配饰" name="b">配饰<Home></Home><Home></Home><Home></Home></van-tab>
+          <van-tab title="美妆" name="c">美妆<Home></Home><Home></Home><Home></Home></van-tab>
         </van-tabs>
 
     
@@ -93,15 +93,8 @@
 import Home from "./Home/Home"
 import Jingxuan from "./Jingxuan/Jingxuan"
 import Vue from 'vue';
-import { Row, Col } from 'vant'
 import BScroll from 'better-scroll'
-Vue.use(Row).use(Col)
-
-
-
-
-
-
+import {  } from "../../api/index";
 
   export default {
     name:"PeachPostage",
@@ -138,11 +131,7 @@ Vue.use(Row).use(Col)
       GoPeachHome(){
         this.$router.replace('/peachhome')
       },
-      // 切换
-      //  handleClick(name, title) {
-      //     console.log(123)
-      //     // this.$toast(title);
-      //  }
+    
     },
     
   }

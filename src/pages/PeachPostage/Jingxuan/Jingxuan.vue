@@ -5,39 +5,9 @@
       <span class="title"> || 近一小时疯抢 || </span>
       <div class="wrapper" ref="wrapperUl">
         <ul class="content">
-          <!-- items是返回的总数据  v-for="(items,index) in item" :key="index"-->
-          <li class="list">
-            <img src="https://img.alicdn.com/imgextra/i1/2201195930685/O1CN01c9EkUU1Gvlrd6J7sG_!!2201195930685.jpg_310x310.jpg_.webp" alt="">
-            <span class="FQ">疯抢6216种</span>
-            <span class="Green">【形象美】商场同款眼霜</span>
-            <span class="Money">$ 8.9</span>
-          </li>
-           <li class="list">
-            <img src="https://img.alicdn.com/imgextra/i1/2201195930685/O1CN01c9EkUU1Gvlrd6J7sG_!!2201195930685.jpg_310x310.jpg_.webp" alt="">
-            <span class="FQ">疯抢6216种</span>
-            <span class="Green">【形象美】商场同款眼霜</span>
-            <span class="Money">$ 8.9</span>
-          </li>
-           <li class="list">
-            <img src="https://img.alicdn.com/imgextra/i1/2201195930685/O1CN01c9EkUU1Gvlrd6J7sG_!!2201195930685.jpg_310x310.jpg_.webp" alt="">
-            <span class="FQ">疯抢6216种</span>
-            <span class="Green">【形象美】商场同款眼霜</span>
-            <span class="Money">$ 8.9</span>
-          </li>
-           <li class="list">
-            <img src="https://img.alicdn.com/imgextra/i1/2201195930685/O1CN01c9EkUU1Gvlrd6J7sG_!!2201195930685.jpg_310x310.jpg_.webp" alt="">
-            <span class="FQ">疯抢6216种</span>
-            <span class="Green">【形象美】商场同款眼霜</span>
-            <span class="Money">$ 8.9</span>
-          </li>
-           <li class="list">
-            <img src="https://img.alicdn.com/imgextra/i1/2201195930685/O1CN01c9EkUU1Gvlrd6J7sG_!!2201195930685.jpg_310x310.jpg_.webp" alt="">
-            <span class="FQ">疯抢6216种</span>
-            <span class="Green">【形象美】商场同款眼霜</span>
-            <span class="Money">$ 8.9</span>
-          </li>
-           <li class="list">
-            <img src="https://img.alicdn.com/imgextra/i1/2201195930685/O1CN01c9EkUU1Gvlrd6J7sG_!!2201195930685.jpg_310x310.jpg_.webp" alt="">
+          <!-- items是返回的总数据 -->
+          <li class="list"  v-for="(item,index) in items" :key="index" >
+            <img :src="item.pic" alt="">
             <span class="FQ">疯抢6216种</span>
             <span class="Green">【形象美】商场同款眼霜</span>
             <span class="Money">$ 8.9</span>
@@ -94,13 +64,14 @@
 </template>
 
 <script type="text/ecmascript-6">
-import datas from "../../../../Peach_server/data/tuijian.json";
+import datas from "../../../../Peach_server/data/home.json";
 import BScroll from 'better-scroll'
   export default {
     name:"Jingxuan",
     data() {
       return {
-        //item:[]
+        items:[],
+       
        
       }
     },
@@ -109,7 +80,9 @@ import BScroll from 'better-scroll'
     mounted() {
       this.goRscroll()
       this.goRscroll2()
-      //this.item = datas.data.data
+      this.items = datas.data.data
+  
+    
      
       
     },

@@ -23,9 +23,10 @@ export const baoyou = ()=>ajax({
 })
 
 // 定义9.9包邮请求的方法
-// export const getNIne = ()=>({
-  
-// })
+export const getNIne = ()=>ajax({
+  url:'/peachpostage'  
+
+})
 
 // 详情页请求数据
 export const reqShangDian = (shangData)=>ajax({

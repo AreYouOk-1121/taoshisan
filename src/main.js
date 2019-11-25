@@ -22,11 +22,12 @@ import loading from "./assets/1.jpg";//引入要本地要加载的懒加载图�
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css'
 Vue.use(ElementUI);
+import { Tab, Tabs,Row, Col } from 'vant';
+Vue.use(Tab).use(Tabs);
+Vue.use(Row).use(Col)
 
 
 Vue.config.productionTip = false
-import { Tab, Tabs } from 'vant';
-Vue.use(Tab).use(Tabs);
 
 Vue.component(Navbar.name, Navbar);
 Vue.component(TabItem.name, TabItem);
