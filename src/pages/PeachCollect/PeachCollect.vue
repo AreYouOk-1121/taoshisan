@@ -74,7 +74,7 @@
 <style lang="stylus" rel="stylesheet/stylus" scoped>
   #wn-PeachCollect
     width 100%
-    height 1000px
+    height 100%
     background-color #eee
     .deleteCollect
       &.delete-enter-active,&.delete-leave-active
