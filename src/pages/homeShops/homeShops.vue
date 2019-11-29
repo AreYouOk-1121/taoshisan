@@ -37,7 +37,7 @@
           </a>
           <div class="price">
             <div class="new-price">劵后价¥{{good.newPrice}}</div>
-            <a href="javascript:;" @click="goPeachDetails(good.id)">立即抢购</a>
+            <a href="javascript:;" @click="goPeachDetails">立即抢购</a>
           </div>
         </div>
       </div>
@@ -57,11 +57,11 @@ export default {
     goPeachHome(){
       this.$router.back()  
     },
-    goPeachDetails(id){ //跳转详情页,通过query传参,params要提要:id站位    
+    goPeachDetails(){ //跳转详情页,通过query传参,params要提要:id站位    
       this.$router.push({
         path:'/peachdetails',
         query:{
-          id:id
+          id:23498652
         }
       })
     }

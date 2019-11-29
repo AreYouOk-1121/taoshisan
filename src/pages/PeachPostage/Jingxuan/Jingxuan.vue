@@ -8,7 +8,7 @@
       <div class="wrapper" ref="wrapperUl1">
         <ul class="content">
           <!-- items是返回的总数据 -->
-          <li class="list" v-for="(item,index) in byDatas">
+          <li class="list" @click="goPeachDetails" v-for="(item,index) in byDatas">
             <img :src="item.pic" alt="">
             <span class="FQ">疯抢6216种</span>
             <span class="Green">{{item.dtitle}}</span>
@@ -72,7 +72,15 @@ import { mapState } from "vuex"
             scrollX:true
           })
         })
-      },  
+      },
+      goPeachDetails(){ //跳转详情页,通过query传参,params要提要:id站位    
+        this.$router.push({
+          path:'/peachdetails',
+          query:{
+            id:23502561
+          }
+        })
+      }  
     },
 
     

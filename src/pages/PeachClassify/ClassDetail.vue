@@ -15,40 +15,43 @@
         <mt-tab-item class="mt-tab-item" id="4">价格</mt-tab-item>
       </mt-navbar>
 
-
-      <mt-tab-container class="mt-tab-container" v-model="selected">
-        <mt-tab-container-item class="mt-tab-container-item" id="1">
-          <!-- <mt-cell v-for="n in 18" :title="'content ' + n" :key="n">例子 -->
-          <mt-cell class="mt-cell" v-for="n in 1" :key="n">
-            <img src="https://gd4.alicdn.com/imgextra/i4/1782609620/O1CN01XHGVKC2Kw0eqxZ3dB_!!1782609620.jpg_310x310.jpg_.webp" alt="">
-            <div class="rightWord">
-              <h3>
-                <span class="taoBao">淘宝</span>
-                <span>【韩都衣舍】2019新款真皮马丁靴女</span>
-              </h3>
-              <div class="price">
-                <div>
-                  <span>券后￥</span>
-                  <span>139</span>
-                </div>
-                <div>
-                  <span class="ticket">券180元</span>
-                </div>
-                <div>
-                  <span>已售2.5万|</span>
-                  <span>评价1542</span>
+      <div @click="goPeachDetails">
+        <mt-tab-container class="mt-tab-container" v-model="selected">
+          <mt-tab-container-item class="mt-tab-container-item" id="1">
+            <!-- <mt-cell v-for="n in 18" :title="'content ' + n" :key="n">例子 -->
+            <mt-cell class="mt-cell" v-for="n in 1" :key="n">
+              <img src="https://gd4.alicdn.com/imgextra/i4/1782609620/O1CN01XHGVKC2Kw0eqxZ3dB_!!1782609620.jpg_310x310.jpg_.webp" alt="">
+              <div class="rightWord">
+                <h3>
+                  <span class="taoBao">淘宝</span>
+                  <span>【韩都衣舍】2019新款真皮马丁靴女</span>
+                </h3>
+                <div class="price">
+                  <div>
+                    <span>券后￥</span>
+                    <span>139</span>
+                  </div>
+                  <div>
+                    <span class="ticket">券180元</span>
+                  </div>
+                  <div>
+                    <span>已售2.5万|</span>
+                    <span>评价1542</span>
+                  </div>
                 </div>
               </div>
-            </div>
-          </mt-cell>
-        </mt-tab-container-item>
-        <mt-tab-container-item id="2">
-          <mt-cell v-for="n in 4" :title="'content ' + n" :key="n"/>
-        </mt-tab-container-item>
-        <mt-tab-container-item id="3">
-          <mt-cell v-for="n in 6" :title="'content ' + n" :key="n"/>
-        </mt-tab-container-item>
-    </mt-tab-container>
+            </mt-cell>
+          </mt-tab-container-item>
+          <mt-tab-container-item id="2">
+            <mt-cell v-for="n in 4" :title="'content ' + n" :key="n"/>
+          </mt-tab-container-item>
+          <mt-tab-container-item id="3">
+            <mt-cell v-for="n in 6" :title="'content ' + n" :key="n"/>
+          </mt-tab-container-item>
+        </mt-tab-container>
+      </div>
+      
+
   </div>
 </template>
 
@@ -62,15 +65,22 @@
         selected:''
       }
     },
-    components:{
-      
-    },
     props: {
       fixed: {
         type: Boolean,
         default: true
       },
-    }
+    },
+    methods: {
+      goPeachDetails(){ //跳转详情页,通过query传参,params要提要:id站位    
+        this.$router.push({
+          path:'/peachdetails',
+          query:{
+            id:23487941
+          }
+        })
+      }
+    },
   }
 </script>
 

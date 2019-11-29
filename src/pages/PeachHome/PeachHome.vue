@@ -99,6 +99,9 @@ import { mapState } from "vuex";
   export default {
     name:"PeachHome",
     mounted(){
+      this.$store.dispatch('getShangDian')
+      this.$store.dispatch('getShangJia')
+      this.$store.dispatch('getTuiJia')
      this.$nextTick(() => {
         this.BScroll = new BScroll(".wrapper",{
           scrollX: true,

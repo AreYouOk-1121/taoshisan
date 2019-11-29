@@ -13,9 +13,7 @@
         </div>
         <div class="scrollbar">
           <div ref="scroller" class="scrollbar-bswrapper">
-            <ul @click="on" class="scrollbar-list">
-              <li  v-for="(item,index) in classify.categoryClass" :key="index" class="scrollbar-list-item active">
-                {{item.name}}
+            <ul ref="navUl" class="scrollbar-list">
               <li @click="getNavIndex(index,item.id)" v-for="(item,index) in ClassImgs" :key="item.id" class="scrollbar-list-item" :class="{active:navIndex===index}">
               
                 <router-link :to="{name:'detail',params:{id:item.id}}">{{item.categoryClassName}}</router-link>
@@ -66,9 +64,6 @@
 </template> 
 
 <script type="text/ecmascript-6">
-   import {getpeachClassify}from '../../api'
-   import {mapState} from 'vuex'
-  
   // 分类
   import BScroll from '@better-scroll/core'
   import ScrollBar from '@better-scroll/scroll-bar'

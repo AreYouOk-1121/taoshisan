@@ -48,6 +48,7 @@
 </template>
 
 <script type="text/ecmascript-6">
+import {mapState} from 'vuex'
   export default {
     name:"ShangPin",
     props:{
@@ -55,7 +56,7 @@
         type:Object,
         required:true
       }
-    }
+    },
   }
 </script>
 

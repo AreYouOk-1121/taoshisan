@@ -9,9 +9,9 @@
       <div class="DeatailContent" ref="deatail">
         <div>
           <!-- 大图组件 -->
-          <BigImage :bigImage="shangDian[0]? shangDian[0].pic :''"/>
+          <BigImage :ImageArr="ImageArr"/>
           <!-- 商品信息 -->
-          <ShangPin :shangMessage="shangDian[0]? shangDian[0]:{}"/>
+          <ShangPin :shangMessage="shangMessage"/>
           <!-- 商家 -->
           <ShangJia :shangName = "shangJia? shangJia : {}"/>
           <!-- 相似推荐 -->
@@ -71,8 +71,9 @@
     name:"PeachDetails",
     data(){
        return {
-        ImageArr:[],
-        ShopCollect:false//初始化收藏默认不高亮 
+        ImageArr:'',
+        ShopCollect:false,//初始化收藏默认不高亮 
+        shangMessage:{}
       }
     },
  /* 在商品列表跳转到详情页应该传递一个id值,让详情页显示对应商品 */   
@@ -81,15 +82,19 @@
         shangDian: state => state.shangDian,
         shangJia: state => state.shangJia,
         tuiJia: state => state.tuiJia,
-      })
+      }),
+      // ...mapState(['goods'])
     },
     mounted() {
-       console.log(this.$route.query.id);//接受id值,要显示对应id的对象数据
-      // this.$store.dispatch('getShangDian')
-      // this.$store.dispatch('getShangJia')
-      // this.$store.dispatch('getTuiJia')
-
-
+      console.log(this.$route.query.id);//接受id值,要显示对应id的对象数据
+      let _id = this.$route.query.id
+      console.log(this.shangDian)
+      if (this.shangDian.length) {
+        let newArr = this.shangDian.filter((item, index)=> item.id === _id)
+        console.log(...newArr)
+        this.shangMessage = newArr[0]
+        this.ImageArr = newArr[0].pic
+      }
     },
     methods: {
       _deatailDian(){
@@ -99,23 +104,10 @@
           click:true
           // tap:"goBy"
         })
-
-        // this.deatailScroll.on('scroll',({x,y})=>{
-        //   // console.log(y)
-        // })
       },
       goBy(index){
         console.log(index)
-      }
-    },
-    /* watch: {
-      shangDian(){
-        this.$nextTick(()=>{
-          this._deatailDian()
-        })
-      }
-    }, */
-    methods:{
+      },
       goShopCollect(){
         this.ShopCollect = !this.ShopCollect
         this.$store.commit(SAVE_GESHOPCOLLECTS,{ShopCollects})

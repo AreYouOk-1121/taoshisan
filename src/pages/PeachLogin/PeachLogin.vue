@@ -9,7 +9,7 @@
      </div>
 </div>
 <div class="login_content">
-<form>
+  <form>
     <div :class="{on: !isPassWordLogin}">
      
             <section class="login_message">

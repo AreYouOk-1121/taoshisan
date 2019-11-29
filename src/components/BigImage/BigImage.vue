@@ -2,7 +2,7 @@
   <div class="swiper-container">
     <ul class="swiper-wrapper">
       <li v-for="item in 5" class="swiper-slide">
-        <img :src="bigImage" alt="tu">
+        <img :src="ImageArr" alt="tu">
       </li>
     </ul>
      <!-- 如果需要分页器 -->
@@ -20,9 +20,12 @@
       }
     },
     props:{
-      bigImage:{
+      ImageArr:{
         type:String
       }
+    },
+    mounted() {
+      console.log(this.ImageArr)
     },
     watch: {
       bigImage(){
